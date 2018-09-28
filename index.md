@@ -12,7 +12,7 @@ the senior software engineering sequence and is hosted in this repository:
 [https://github.com/No-one-alone/no-one-alone.github.io](https://github.com/No-one-alone/no-one-alone.github.io)
 
 ## Software Engineering I (CS 460): Homework Assignments
-[Homework #1](Homework%231/blog.md)
+[Homework #1](Homework_1/blog.md)
 
 * Here's a bulleted list
 * Another item
