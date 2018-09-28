@@ -1,10 +1,18 @@
-# Khorben Boyer's Student Repository
+# Khorben Boyer's Portfolio
 
 This is meant to serve as a landing page for my work from my time as a student.
 
 ## About Me
 
-I am a Senior year Computer Science Major at Western Oregon University in Monmouth, Oregon and am set to graduate in June 2019. My academic journey at WOU has led me to obtain additional majors in Mathematics and Economics prior to my Senior year in CS.
+My name is Khorben A. Boyer, and I am a Senior year Computer Science Major at [Western Oregon University](https://www.wou.edu/) in Monmouth, Oregon. Per my current schedule, I am set to graduate in June 2019. My academic journey at WOU has led me to obtain additional majors in Mathematics and Economics prior to my Senior year in CS.
+
+## Code Repository
+All code referenced in this portfolio is for the CS 460 component of
+the senior software engineering sequence and is hosted in this repository:
+[https://github.com/No-one-alone/no-one-alone.github.io](https://github.com/No-one-alone/no-one-alone.github.io)
+
+## Software Engineering I (CS 460): Homework Assignments
+[Homework #1](https://github.com/No-one-alone/no-one-alone.github.io/blob/master/Homework%231/index.md)
 
 * Here's a bulleted list
 * Another item
