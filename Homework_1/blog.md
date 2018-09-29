@@ -18,7 +18,7 @@ the senior software engineering sequence and is hosted in this repository:
 
 ## Software Engineering I (CS 460): Homework Assignments
 
-[demo](index.html)
+[demo](Homework_1/index.html)
 
 * Here's a bulleted list
 * Another item
