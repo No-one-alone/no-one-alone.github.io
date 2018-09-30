@@ -2,7 +2,7 @@
 
 ## Homework 1
 
-we did stuff ...this is our bloggy!!!
+For this first homework, we were responsible for learning a basic working knowledge of the HTML, CSS, and Markdown languages. In the course of this, the settig up of a github repository was carrried out as seen in the link below. Throughout the homework, we were practicing the use of various essential git commands. Also, the site demo links to a set of simple webpages meant to showcase the use of HTML and CSS. The styling of the pages was carried out using the common package Bootstap - a CSS and Javascript library good for page layouts - as well as our own mini CSS file.
 
 ## Homework 1 Links
 1. [Home page](https://no-one-alone.github.io/)
@@ -12,12 +12,10 @@ we did stuff ...this is our bloggy!!!
 
 
 
-My name is Khorben A. Boyer, and I am a Senior year Computer Science Major at [Western Oregon University](https://www.wou.edu/) in Monmouth, Oregon. Per my current schedule, I am set to graduate in June 2019. My academic journey at WOU has led me to obtain additional majors in Mathematics and Economics prior to my Senior year in CS.
 
-## Code Repository
-All code referenced in this portfolio is for the CS 460 component of
-the senior software engineering sequence and is hosted in this repository:
-[https://github.com/No-one-alone/no-one-alone.github.io](https://github.com/No-one-alone/no-one-alone.github.io)
+
+## Part 1: 
+
 
 ## Software Engineering I (CS 460): Homework Assignments
 
