@@ -5,7 +5,10 @@
 we did stuff ...this is our bloggy!!!
 
 ## Homework 1 Links
-[]
+[Home page](https://no-one-alone.github.io/)
+[Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html)
+[Code Repository](https://github.com/No-one-alone/no-one-alone.github.io)
+[Final Site Demo](https://no-one-alone.github.io/Homework_1/index.html)
 
 
 
