@@ -219,9 +219,9 @@ a complete example of the coding for page can be seen with about.html for the Ab
 
 This shows what the overall file structure of my project is organized:
 
-![FileStructure](https://no-one-alone.github.io/Homework_1/file_structure.PNG)
+![FileStructure](file_structure.PNG)
 
 
 Here we have a picture of the actual web page
 
-![Webpages](https://no-one-alone.github.io/Homework_1/web_page.PNG)
+![Webpages](web_page.PNG)
