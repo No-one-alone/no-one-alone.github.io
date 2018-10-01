@@ -1,41 +1,30 @@
-/* My own CSS style sheet file */
+/* This is my own CSS style sheet file for Homework#1 of CS 460 at WOU
+   Date finished: 10/1/2018 */
 
+/*This sets the background color of all of the webpages*/
 body{
     background-color: gainsboro;
-  
 }
 
+/* This center aligns the text in the headers of the pages.*/
 #header{
     text-align: center;
 }
 
+/* This sets the color background of the containders within the webpage
+   e.g. the text and image blocks*/
 .container{
     width: 100%;
     background-color: aliceblue;
 }
 
+/* This center aligns the text in the webpages*/
 .container-fluid{
     text-align: center
 }
 
-/*
-.image1{
-    width: 75%;
-    height: auto;
-    background-color: blue
-}
-
-.image2{
-    width: 75%;
-    height: auto;
-    background-color: blue
-}
-
-*/
-
-
+/* This formats and controls how the images are arranged and displayed in the webpages*/
 img{
-    
     width: 100%;
     height: auto;
     width: auto;
@@ -43,42 +32,25 @@ img{
     padding-bottom: 1%;
     padding-left: 1%;
     padding-right: 1%;
-
-
-    
     margin-left: auto;
     margin-right: auto;
-    
-
-
-
     background-color:
 }
 
+
+/* This provides additional control of padding around the text in the webpages*/
 .content{
     padding-left: 0%;
     padding-right: 0%;
     padding-top: 1%;
     padding-bottom: 1%;
-
     text-align: center;
-   
-
-
     padding: 10px 20px;
-
-
-
-    /*background-color: blue; */
 }
-/*
-div{
-    column-count: 2;
-    column-gap: 40px;
-}
-*/
 
+/* The code block below is responsible for formating the navbar of the webpages */
 
+/* This formats unordered lists */
 ul {
     list-style-type: none;
     margin: 0;
@@ -87,11 +59,12 @@ ul {
     background-color: #333;
 }
 
+/* This formats item lists */
 li {
    float: left; 
-   
 }
 
+/* This formats item list elements */
 li a {
     display: inline-block;
     color: white;
@@ -100,18 +73,12 @@ li a {
     text-decoration: none;
 }
 
+/* This provides the hover selection color for the contact webpage */
 li a:hover {
     background-color: #111;
 }
 
-.active {
-    background-color: red;
-}
-
-.table table-hover{
-    color: green
-}
-
+/* This fixes a figure in place */
 figure {
     position: fixed;
 }
