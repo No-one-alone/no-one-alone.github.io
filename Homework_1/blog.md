@@ -1,5 +1,3 @@
-# Khorben Boyer's Portfolio
-
 ## Homework 1
 
 For this first homework, we were responsible for learning a basic working knowledge of the HTML, CSS, and Markdown languages. In the course of this, the setting up of a github repository was carrried out as seen in the link below. Throughout the homework, we were practicing the use of various essential git commands. Furthermore, the site demo links to a set of simple webpages meant to showcase the use of HTML and CSS. The styling of the pages was carried out using the common package Bootstap - a CSS and Javascript library good for page layouts - as well as our own mini CSS file.
@@ -123,3 +121,98 @@ Navbar setup
         </nav>
 
 ```
+
+The html code above was then replicated another 4 times to create 5 html files in total: 
+
+```
+    index.html
+    about.html
+    pov_ray_work.html
+    math_senior_project_work.html
+    contact.html
+```
+
+a complete example of the coding for page can be seen with about.html for the About page:
+
+```html
+<!--This my file for the About web page for Homework#1 of CS 460-->
+<!--Date finished: 10/1/2018-->
+
+<!doctype html>
+<html lang="eng">
+
+    <!-----bootstrap part-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!----my version of bootstrap css stuff----->   
+    <link rel="stylesheet" type="text/css" href="styles.css">    
+    <head>
+        <h1>
+            Khorben's Past Works
+        </h1>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scaled=1">
+    </head>
+
+    <!--Work Comment: navbar structure was informed by help from fellow students-->
+    <body>
+        <nav class="navbar navbar-expand">
+            <div class="container-fluid space">
+                <ul class="nav nav-tabs">
+                    <ul class="navbar-nav>">
+                        <li class="nav-item">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="pov_ray_work.html">POV-ray Work</a>
+                            <a href="math_senior_project_work.html">Math Senior Project Work</a>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="background">
+            <div class="container">
+                <div class="content">
+                    <h2>
+                        Statement of Intent
+                    </h2>
+                    <p>
+                        "I have been at WOU for over 6 years.
+                        In that time, I have taken many classes, met with many instructors, and worked on many projects.
+                        While all have been conducive to my growth as a student, 
+                        there are some of particular significance to my mind with regards to how
+                        they stretched what I thought I could do or accomplish. The works referenced
+                        above are examples of just these sorts of projects."
+                    </p>
+                    <div class="row">
+                        
+                            <div class="column">
+                            <h2>
+                                    My Majors
+                            </h2>
+                            <ol>
+                                    <dt>Mathematics</dt>
+                                    <dt>Computer Science</dt>
+                                    <dt>Economics</dt>
+                            </ol>
+                            </div>
+                            <div class="column"> <h2>
+                                    My Interests
+                            </h2>
+                            <ol>
+                                <dt>Machine Learning</dt>
+                                <dt>Artificial Intelligence</dt>
+                                <dt>Applied Mathematics and Statistics</dt>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+```
+
