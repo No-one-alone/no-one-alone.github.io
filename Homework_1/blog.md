@@ -30,3 +30,28 @@ For this first homework, we were responsible for learning a basic working knowle
 > This is a qoute
 
 [This is a link to Google](https://google.com)
+
+This git commmands
+``` bash
+    git init
+```
+
+Navbar setup
+``` html
+<nav class="navbar navbar-expand">
+            <div class="container-fluid space">
+                <ul class="nav nav-tabs">
+                    <ul class="navbar-nav>">
+                        <li class="nav-item">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="pov_ray_work.html">POV-ray work</a>
+                            <a href="math_senior_project_work.html">Math Senior Project Work</a>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+
+```
