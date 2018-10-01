@@ -1,6 +1,4 @@
-# Khorben Boyer's Portfolio
-
-This is meant to serve as a landing page for my work from my time as a student.
+# Khorben Boyer
 
 ## About Me
 
