@@ -20,7 +20,7 @@ body{
 
 /* This center aligns the text in the webpages*/
 .container-fluid{
-    text-align: center
+    text-align: center;
 }
 
 /* This formats and controls how the images are arranged and displayed in the webpages*/
@@ -34,7 +34,7 @@ img{
     padding-right: 1%;
     margin-left: auto;
     margin-right: auto;
-    background-color:
+   
 }
 
 
@@ -89,6 +89,7 @@ figure {
     float: left;
     width: 50%;
 }
+
 
 /* This makes the columns on the About webpage stack when the screen is made too narrow */
 @media screen and (max-width: 600px) {
