@@ -82,3 +82,17 @@ li a:hover {
 figure {
     position: fixed;
 }
+
+
+/* This controls formatting of columns on the About webpage */
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* This makes the columns on the About webpage stack when the screen is made too narrow */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
