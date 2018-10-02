@@ -1,6 +1,6 @@
 ## Homework 1
 
-For this first homework, we were responsible for learning a basic working knowledge of the HTML, CSS, and Markdown languages. In the course of this, the setting up of a github repository was carrried out as seen in the link below. Throughout the homework, we were practicing the use of various essential git commands. Furthermore, the site demo links to a set of simple webpages meant to showcase the use of HTML and CSS. The styling of the pages was carried out using the common package Bootstap - a CSS and Javascript library good for page layouts - as well as our own mini CSS file.
+For this first homework, we were responsible for learning a basic working knowledge of the HTML, CSS, and Markdown languages. In the course of this, the setting up of a github repository was carrried out as seen in the link below. Throughout the homework, we were practicing the use of various essential git commands. Furthermore, the site demo links to a set of simple webpages meant to showcase the use of HTML and CSS. The styling of the pages was carried out using the common package Bootstap - a CSS and Javascript library good for page layouts - as well as our own mini CSS file for manual style control.
 
 ### Homework 1 Links
 1. [Home page](https://no-one-alone.github.io/)
@@ -217,7 +217,7 @@ A complete example of the coding for a page can be seen with about.html for the 
 </html>
 
 ```
-The above code block also shows our implementation of an undered list "ul" and an ordered list "ol". It also supports a single column and multi-column page via use of "row" and "column".
+The above code block also shows our implementation of an unordered list "ul" and an ordered list "ol". It also supports a single column and multi-column page via use of "row" and "column".
 
 
 In addition, I implemented a description list "dl" on the Home page in this manner.
