@@ -74,9 +74,11 @@ I then downloaded the Visual Studio IDE from [here](https://visualstudio.microso
 
 ### Part 3: Coding the Project
 
-As per the assignment specifications, I created a primary landing page, a linkded CS 460 landing page, and the Homework #1 blog page itself after choosing to use markdown language. The actual webpage portion of the assignment was created using separated html and css files.
+As per the assignment specifications, I created a primary landing page, a linked CS 460 landing page, and the Homework #1 blog page itself after choosing to use markdown language. The actual webpage portion of the assignment was created using separate HTML and CSS files.
 
-I worked primarly on the webpage portion first starting with some standard beginning html code observed from this [site](https://www.w3schools.com/html/default.asp) and linking in the particular bootstrap css files I needed along with my own css file.
+### Part 3.1: HTML
+
+I worked primarly on the webpage portion first starting with some standard beginning HTML code observed from this [site](https://www.w3schools.com/html/default.asp) and linking in the particular bootstrap CSS files I needed along with my own css file as seen here.
 
 ```html
 <!--This my file for the Home web page for Homework#1 of CS 460-->
@@ -132,7 +134,7 @@ The html code above was then replicated another 4 times to create 5 html files i
     contact.html
 ```
 
-a complete example of the coding for page can be seen with about.html for the About page:
+A complete example of the coding for a page can be seen with about.html for the About page:
 
 ```html
 <!--This my file for the About web page for Homework#1 of CS 460-->
@@ -192,16 +194,16 @@ a complete example of the coding for page can be seen with about.html for the Ab
                             <h2>
                                     My Majors
                             </h2>
-                            <ol>
-                                    <dt>Mathematics</dt>
-                                    <dt>Computer Science</dt>
-                                    <dt>Economics</dt>
+                            <ol start="1">
+                                <dt>Mathematics</dt>
+                                <dt>Computer Science</dt>
+                                <dt>Economics</dt>
                             </ol>
                             </div>
                             <div class="column"> <h2>
                                     My Interests
                             </h2>
-                            <ol>
+                            <ol start="1">
                                 <dt>Machine Learning</dt>
                                 <dt>Artificial Intelligence</dt>
                                 <dt>Applied Mathematics and Statistics</dt>
@@ -215,13 +217,253 @@ a complete example of the coding for page can be seen with about.html for the Ab
 </html>
 
 ```
+The above code block also shows our implementation of an undered list "ul" and an ordered list "ol". It also supports a single column and multi-column page via use of "row" and "column".
 
 
-This shows what the overall file structure of my project is organized:
+In addition, I implemented a description list "dl" on the Home page in this manner.
+```html
+
+<div class="background">
+            <div class="container">
+                <div class="content">
+                    <h2>
+                        Welcome
+                    </h2>
+                    <p>
+                        "This web page is meant to showcase works from my previous years as a student at Western Oregon University. 
+                        The types of work range from sketches to a full paper."
+                    </p>
+
+                    <h2>
+                            Educational history
+                    </h2>
+
+                    <dl>
+                        <dt>Community College: 4 years</dt>
+                        <dd>Purpose: Preparation for University</dd>
+                        <dt>Western Oregon University: 6 years</dt>
+                        <dd>Purpose: Obtaining various majors</dd>
+                        <dt>Oregon State University: 1 year (part-time)</dt>
+                        <dd>Purpose: Obtaining necessary classes for majors</dd>
+                    </dl>
+
+                </div>
+            </div>
+        </div>
+
+```
+
+As for implementing the table, I constructed it on the Contact page using the following code.
+
+```html
+
+<div class="background">
+                <div class="container">
+                    <div class="content">
+                            <h2>
+                                    My contact details
+                            </h2>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        First Name
+                                    </th>
+                                    <th>
+                                        Middle Initial
+                                    </th>
+                                    <th>
+                                        Last Name
+                                    </th>
+                                    <th>
+                                        University
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Khorben
+                                    </td>
+                                    <td>
+                                        A.
+                                    </td>
+                                    <td>
+                                        Boyer
+                                    </td>
+                                    <td>
+                                        Western Oregon University
+                                    </td>
+                                    <td>
+                                        kboyer12@wou.edu
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Khorben
+                                    </td>
+                                    <td>
+                                        A.
+                                    </td>
+                                    <td>
+                                        Boyer
+                                    </td>
+                                    <td>
+                                        Oregon State University
+                                    </td>
+                                    <td>
+                                        boyerkh@oregonstate.edu
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+```
+
+### Part 3.2: CSS
+Per requirements we also had to create our own styles.css file with at least several classes. This code block shows the initial part of the css program where we have used CSS to set the background color for the entire webpage site, the alignment of the text in the header and in the main page, and the color of the box in which text or images was contained.
+
+```css
+/* This is my own CSS style sheet file for Homework#1 of CS 460 at WOU
+   Date finished: 10/1/2018 */
+
+/*This sets the background color of all of the webpages*/
+body{
+    background-color: gainsboro;
+}
+
+/* This center aligns the text in the headers of the pages.*/
+#header{
+    text-align: center;
+}
+
+/* This sets the color background of the containders within the webpage
+   e.g. the text and image blocks*/
+.container{
+    width: 100%;
+    background-color: aliceblue;
+}
+
+/* This center aligns the text in the webpages*/
+.container-fluid{
+    text-align: center;
+}
+
+```
+
+```css
+/* This provides additional control of padding around the text in the webpages*/
+.content{
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    padding: 10px 20px;
+    }
+
+```
+
+To format images, I used the following class and style settings.
+
+```css
+/* This formats and controls how the images are arranged and displayed in the webpages*/
+img{
+    width: 100%;
+    height: auto;
+    width: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+```
+
+Formatting the navbar involved using the classes and specified styling seen here.
+
+```css
+/* The code block below is responsible for formating the navbar of the webpages */
+
+/* This formats unordered lists */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* This formats item lists */
+li {
+   float: left; 
+}
+
+/* This formats item list elements */
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* This provides the hover selection color for the contact webpage */
+li a:hover {
+    background-color: #111;
+}
+```
+
+
+Lastly, I controlled numbered list display, figure placement, column formatting, and column behavior with the css code seen below.
+
+```css
+/* This controls the display of numbered lists*/
+dt{
+    display: list-item;
+    marker: none;
+}
+
+
+/* This fixes a figure in place */
+figure {
+    position: fixed;
+}
+
+
+/* This controls formatting of columns on the About webpage */
+.column {
+    float: left;
+    width: 50%;
+}
+
+
+/* This makes the columns on the About webpage stack when the screen is made too narrow */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+```
+### Part 3.3: Final results
+
+Next, this shows how the overall file structure of my project was organized.
 
 ![FileStructure](file_structure.PNG)
 
 
-Here we have a picture of the actual web page
+Finally, we have a picture of the actual completed web page.
 
 ![Webpages](web_page.PNG)
+
+Overall, this was an interesting experience in creating webpages and working with HTML, CSS, markdown, and Git. As for the webpages themselves, I think they could look better, but given the time constraints, I am satisfied with what was achieved.

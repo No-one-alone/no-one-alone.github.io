@@ -52,7 +52,7 @@ img{
 
 /* This formats unordered lists */
 ul {
-    list-style-type: none;
+    list-style-type: none; 
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -62,11 +62,12 @@ ul {
 /* This formats item lists */
 li {
    float: left; 
+ 
 }
 
 /* This formats item list elements */
 li a {
-    display: inline-block;
+    display: inline-block; 
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -77,6 +78,13 @@ li a {
 li a:hover {
     background-color: #111;
 }
+
+/* This controls the display of numbered lists*/
+dt{
+    display: list-item;
+    marker: none;
+}
+
 
 /* This fixes a figure in place */
 figure {
