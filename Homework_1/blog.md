@@ -495,6 +495,6 @@ Next, this shows how the overall file structure of my project was organized.
 
 Finally, we have a picture of the actual completed web page.
 
-![Webpages](web_page_better.PNG)
+![Webpages](web_page_better_2.PNG)
 
 Overall, this was an interesting experience in creating webpages and working with HTML, CSS, markdown, and Git. As for the webpages themselves, I think they could look better, but given the time constraints, I am satisfied with what was achieved.
