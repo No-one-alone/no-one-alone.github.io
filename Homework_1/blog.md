@@ -456,7 +456,37 @@ figure {
     }
 }
 ```
-### Part 3.3: Final results
+### Part 3.3 Markdown
+
+Now, we note the markdown code that was used to build the primary landing page, the CS 460 landing page, and this homework#1 blog page as well. Specifically, these are the elements of the language that I have used so far.
+
+```
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+1. This is an item on a ordered list
+2. This is an item on a ordered list
+
+> This is a block quote
+
+A [link](http://example.com)
+
+![Alt](example.PNG) <-- inline image.
+
+"```" <-- ignore the quotes
+This is a 
+block of
+code
+
+"```" <-- ignore the quotes
+
+```
+
+### Part 3.4: Final results
 
 Next, this shows how the overall file structure of my project was organized.
 
