@@ -1,7 +1,6 @@
 ## Homework 1
 
 For this first homework, we were responsible for learning a basic working knowledge of the HTML, CSS, and Markdown languages. In the course of this, the setting up of a github repository was carrried out as seen in the link below. Throughout the homework, we were practicing the use of various essential git commands. Furthermore, the site demo links to a set of simple webpages meant to showcase the use of HTML and CSS. The styling of the pages was carried out using the common package Bootstap - a CSS and Javascript library good for page layouts - as well as our own mini CSS file for manual style control.
-[Final Site Demo](https://no-one-alone.github.io/Homework_1/index.html)
 
 ### Homework 1 Links
 1. [Home page](https://no-one-alone.github.io/)
