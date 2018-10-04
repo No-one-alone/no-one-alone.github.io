@@ -460,7 +460,7 @@ figure {
 
 Now, we note the markdown code that was used to build the primary landing page, the CS 460 landing page, and this homework#1 blog page as well. Specifically, these are the elements of the language that I have used so far.
 
-```
+```markdown
 
 # Header 1
 
