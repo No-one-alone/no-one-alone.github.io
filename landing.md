@@ -7,7 +7,8 @@ the senior software engineering sequence and is hosted in this repository:
 
 ### Software Engineering I (CS 460): Homework Assignments
 1. [Homework #1](Homework_1/blog.md) (Git, HTML, CSS, and Bootstrap)
->Homework #2 coming soon ...
+2. [Homework #2](Homework_2/blog.md) (HTML, Javascript, and jQuery)
+>Homework #3 coming soon ...
 
 ### Notes
 >Coming Soon ...
