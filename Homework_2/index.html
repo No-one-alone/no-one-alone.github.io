@@ -1,0 +1,129 @@
+<!--This is my file for the Number Checker web page for Homework#2 of CS 460-->
+<!--Date finished: 10/10/2018-->
+
+<!doctype html>
+<html lang="eng">
+
+       <!-----bootstrap part-->
+       <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+       <!----my version of bootstrap css stuff----->   
+       <link rel="stylesheet" type="text/css" href="styles.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scaled=1">
+
+    </head>
+ 
+    <!--The following defines the content and structure of the number checker webpage-->
+        <body>
+            <div class="container outer">
+                    <h1>Number Checker</h1>
+                    <div class="container inner">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>Ever wonder what mathematical property or relation two numbers may share?
+                                    Well wonder no longer! Just input two numbers between 1 and 1000 (inclusive),
+                                    check off the properties of interest to you, and click analyze to see the results.
+                                </p>
+                            </div>
+                        </div>
+                        <form id="numberForm" method="post">
+                         
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    
+                                    <!--Input numbers-->
+                                    <h4>Input Numbers</h4>
+                                        <div class="inside">
+                                            <label for='shots'>First Number: &nbsp &nbsp &nbsp</label>
+                                            <input type="number" min="1" max="1000" value="1" id="firstinputnumber">
+                                           
+                                        </div>
+                                        <div>
+                                                <label for='shots'>Second Number:&nbsp</label>
+                                                <input type="number" min="1" max="1000" value="1" id="secondinputnumber">
+                                        </div>
+                                    <!--/Input numbers-->
+                                    
+                                </div>
+                                <div class="col-sm-6">
+                                    
+                                    <!--Property selection-->
+                                    <h4>Number Properties</h4>
+        
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="inside">
+                                            <!--Compare-->
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <input type="checkbox" id="compare" value="49" name="compare" class="extra"><label for="compare">&nbsp Compare number size</label>
+                                                    </div>
+                                                   
+                                                </div>
+                                            <!--/Compare-->
+                                            
+                                            <!--Multiple-->
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <input type="checkbox" id="multiple" name="multiple" value="52" class="extra"><label for="multiple">&nbsp Check if multiple of other</label>
+                                                    </div>
+                                                   
+                                                </div>
+                                            <!--/Multiple-->
+                                        
+                                    <!--/Property selection-->
+                                    
+                                </div>
+                            </div>
+        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--once the analyze button is hit, a javascript function will be called to determine the properties of the input numbers and append it to the page-->
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <input type="submit"  value="Analyze" onclick="return propertyAnalysis()">
+                                </div>
+                            </div>
+                            
+                        </form>
+                        
+                        <hr>
+                        <h3>Output</h3>
+                        <div class="output">
+                        <!--the ouptut table for our number property results-->
+                        <div class=row>
+                            <div class="col-sm-12">
+                                <table class="table" id="outtable">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Numbers Inputted
+                                            </th>
+                                            <th>
+                                                Property Checked
+                                            </th>
+                                            <th>
+                                                Mathematical relation
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <div id="tabletarget">
+                                            
+                                        </div>
+                                    </tbody>
+                                </table>
+                            </div> 
+                        </div>
+        
+        
+                    </div>
+                    </div>
+            
+                </div>           
+        </body>
+</html>
