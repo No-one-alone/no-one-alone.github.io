@@ -1,0 +1,17 @@
+/* This is my css styles file for the Number Checker web page for Homework#2 of CS 460
+ Date finished: 10/10/2018 */
+
+
+tr {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+/*
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+*/
+
