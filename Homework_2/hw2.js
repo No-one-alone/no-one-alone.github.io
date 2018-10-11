@@ -1,9 +1,6 @@
 // This is my Javascript file for the Number Checker web page for Homework#2 of CS 460
 // Date finished: 10/10/2018
 
-//var compareChecked = false;
-
-//var multipleChecked = false;
 
 var firstInput = 0;
 
@@ -14,10 +11,6 @@ var secondInput = 0;
 // and returns an error message to the user if they are not.
 function checkInputs()
 {
-    // Extracts the user inputs from the input numbers part.
-  //  firstInput = parseInt(document.getElementById('firstinputnumber').value);
-  //  secondInput = parseInt(document.getElementById('secondinputnumber').value);
-
     var firstInputted = $('#firstinputnumber')[0].value; ;  //returns a jQuery Object
     var secondInputted = $('#secondinputnumber')[0].value; ;  //returns a jQuery Object
 
@@ -31,19 +24,7 @@ function checkInputs()
     // and sends an error message if not.
     if(isNaN(firstInput) || isNaN(secondInput))
     {
-       
-    //    var node = document.getElementById("error"); // retrieves the "error" element
-        var node = $('#error')[0]; // retrieves the "error" element
-        
-        var heading = document.createElement("h4");  // creates "heading" element
-    //    var heading = $('#h4')[0]; // creates "heading" element
-
-        var message = document.createTextNode("Both inputs must be numbers!"); // creates error message.
-        node.style.background = "red"; // sets background of error message.
-        node.style.color = "white"; // sets the color of the letters of the message.
-        //node.style.padding = "1px";
-        heading.appendChild(message); // appends the message to the heading.
-        node.appendChild(heading); // appends the message to the node.
+        $( '#error' ).append("<h4>Both inputs must be numbers!</h4>");
         
         return false;
     }
@@ -54,23 +35,10 @@ function checkInputs()
     {
         if( firstInput < 1 || firstInput > 1000 || secondInput < 1 || secondInput > 1000)
         {
-        //    var node = document.getElementById("error"); // retrieves the "error" element
+            $( '#error' ).append("<h4>Both inputs must be between 1 and 1000!</h4>");
         
-            var node = $('#error')[0]; // retrieves the "error" element
-
-            var heading = document.createElement("h4"); // creates "heading" element
-            var message = document.createTextNode("Both inputs must be between 1 and 1000!"); // creates error message.
-            node.style.background = "red"; // sets background of error message.
-            node.style.color = "white"; // sets the color of the letters of the message.
-            //node.style.padding = "1px";
-            heading.appendChild(message); // appends the message to the heading.
-            node.appendChild(heading); // appends the message to the node.
-
             return false;
         }
-
-        
-    
     }
 
     
@@ -78,7 +46,7 @@ function checkInputs()
 }
 
 
-
+//
 function checkProperties()
 {
     var compareChecked = $('#compare').is(":checked");
@@ -145,35 +113,7 @@ function checkProperties()
         }
     }
 
-/*
-    var node = document.getElementById("totaltarget"); 
 
-    var outTable = document.createElement("table");
-    outTable.setAttribute("id", "outTable");
-    node.appendChild(outTable);
-
-    // find table element
-    var endTable = document.getElementById("outTable");
-
-    // create empty <tr> element and add it to the first position of the table
-    var row = endTable.insertRow(0);
-
-    // insert new cells (<td>) elements at the 1st, 2nd, and 3rd position of the "new" <tr> element:
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-
-    // add content to cells
-    cell1.innerHTML = "First: " + firstInput + ", Second: " + secondInput;
-    cell2.innerHTML = propertyChecked;
-    cell3.innerHTML = relationFound;
-*/
-
-//var node = $('#totaltarget')[0]; // retrieves the "totaltarget" element
-
-//var outTable = document.createElement("table");
-//outTable.setAttribute("id", "outTable");
-//node.appendChild(outTable);
 
 var rowHTML = "";
 rowHTML = rowHTML + "<table style='width:100%'><tr>";
@@ -201,75 +141,17 @@ rowHTML = rowHTML + "<tr><th>\xa0</th></tr>";
 rowHTML = rowHTML + "</table>";
 
 $( ".target" ).append(rowHTML);
-//$( ".target" ).append( "<table style='width:90%'><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr></table>");
-
-    
-
-
-/*
-        // create empty <tr> element and add it to the first position of the table
-        var row = endTable.insertRow(1);
-
-        // insert new cells (<td>) elements at the 1st, 2nd, and 3rd position of the "new" <tr> element:
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-   
-        // add content to cells
-        cell1.innerHTML = secondProperty;
-        cell2.innerHTML = backupPropertyChecked;
-        cell3.innerHTML = backupRelationFound;
-*/ 
-
-/*
-    if(compareCheck == true && multipleChecked == true)
-    {
-        alert("reached");
-        //var node = document.getElementById("totaltarget"); 
-
-       // var outTable = document.createElement("table");
-       // outTable.setAttribute("id", "outTable");
-       // node.appendChild(outTable);
-
-
-       // find table element
-       //var endTable = document.getElementById("outTable");
-
-       endTable = document.getElementById("outTable");
-       // create empty <tr> element and add it to the first position of the table
-       var row = endTable.insertRow(1);
-   
-       // insert new cells (<td>) elements at the 1st, 2nd, and 3rd position of the "new" <tr> element:
-       var cell1 = row.insertCell(0);
-       var cell2 = row.insertCell(1);
-       var cell3 = row.insertCell(2);
-   
-       // add content to cells
-       cell1.innerHTML = "First: " + firstInput + ", Second: " + secondInput;
-       cell2.innerHTML = backupPropertyChecked;
-       cell3.innerHTML = backupRelationFound;
-    }
-*/
 
 
 }
 
 
+///
 function resetInputs()
 {
-   // var inputOne = $( "container outer" ).find( "firstinputnumber" );
-
-   // htmlStr = "<input type='reset' value='Reset the form'>";
-
-    //$("div.inside" ).append(htmlStr);
-
     $( "div.inside1" ).replaceWith( "<div class='inside1'><label for='first number'>First Number: &nbsp &nbsp &nbsp</label><input type='number' min='1' max='1000' value='1' id='firstinputnumber'></div>");
     $( "div.inside2" ).replaceWith( "<div class='inside2'><label for='second number'>Second Number:&nbsp</label><input type='number' min='1' max='1000' value='1' id='secondinputnumber'></div>");
-
-
 }
-
-
 
 
 // This function serves as the entry point for
@@ -287,23 +169,3 @@ function propertyAnalysis()
 
     return false
 }
-
-       // var node = document.getElementById("totaltarget");
-        
-      //  var heading = document.createElement("h3");
-        
-       // heading.appendChild(message);
-       // node.appendChild(heading);
-
-       // alert("reached");
-
-       /*
-        var node = document.getElementById("totaltarget"); // retrieves the "error" element
-        var heading = document.createElement("h4");  // creates "heading" element
-        var message = document.createTextNode("string here"); // creates error message.
-      //  node.style.background = "red"; // sets background of error message.
-       // node.style.color = "white"; // sets the color of the letters of the message.
-        //node.style.padding = "1px";
-        heading.appendChild(message); // appends the message to the heading.
-        node.appendChild(heading); // appends the message to the node.
-        */
