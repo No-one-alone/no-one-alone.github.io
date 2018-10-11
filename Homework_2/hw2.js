@@ -15,19 +15,29 @@ var secondInput = 0;
 function checkInputs()
 {
     // Extracts the user inputs from the input numbers part.
-    firstInput = parseInt(document.getElementById('firstinputnumber').value);
-    secondInput = parseInt(document.getElementById('secondinputnumber').value);
+  //  firstInput = parseInt(document.getElementById('firstinputnumber').value);
+  //  secondInput = parseInt(document.getElementById('secondinputnumber').value);
+
+    var firstInputted = $('#firstinputnumber')[0].value; ;  //returns a jQuery Object
+    var secondInputted = $('#secondinputnumber')[0].value; ;  //returns a jQuery Object
+
+    firstInput = parseInt(firstInputted);
+    secondInput = parseInt(secondInputted);
 
     // This resets the error message if one was already present.
-    $('#error').empty();
+    $('#error').empty(); // more JQuery
    
     // This checks if both inputs were numbers
     // and sends an error message if not.
     if(isNaN(firstInput) || isNaN(secondInput))
     {
        
-        var node = document.getElementById("error"); // retrieves the "error" element
+    //    var node = document.getElementById("error"); // retrieves the "error" element
+        var node = $('#error')[0]; // retrieves the "error" element
+        
         var heading = document.createElement("h4");  // creates "heading" element
+    //    var heading = $('#h4')[0]; // creates "heading" element
+
         var message = document.createTextNode("Both inputs must be numbers!"); // creates error message.
         node.style.background = "red"; // sets background of error message.
         node.style.color = "white"; // sets the color of the letters of the message.
@@ -44,7 +54,10 @@ function checkInputs()
     {
         if( firstInput < 1 || firstInput > 1000 || secondInput < 1 || secondInput > 1000)
         {
-            var node = document.getElementById("error"); // retrieves the "error" element
+        //    var node = document.getElementById("error"); // retrieves the "error" element
+        
+            var node = $('#error')[0]; // retrieves the "error" element
+
             var heading = document.createElement("h4"); // creates "heading" element
             var message = document.createTextNode("Both inputs must be between 1 and 1000!"); // creates error message.
             node.style.background = "red"; // sets background of error message.
@@ -214,11 +227,15 @@ function checkProperties()
 
 function resetInputs()
 {
-    var inputOne = $( "container outer" ).find( "firstinputnumber" );
+   // var inputOne = $( "container outer" ).find( "firstinputnumber" );
 
-    htmlStr = "<input type='reset' value='Reset the form'>";
+   // htmlStr = "<input type='reset' value='Reset the form'>";
 
-    $("div.inside" ).append(htmlStr);
+    //$("div.inside" ).append(htmlStr);
+
+    $( "div.inside1" ).replaceWith( "<div class='inside1'><label for='first number'>First Number: &nbsp &nbsp &nbsp</label><input type='number' min='1' max='1000' value='1' id='firstinputnumber'></div>");
+    $( "div.inside2" ).replaceWith( "<div class='inside2'><label for='second number'>Second Number:&nbsp</label><input type='number' min='1' max='1000' value='1' id='secondinputnumber'></div>");
+
 
 }
 

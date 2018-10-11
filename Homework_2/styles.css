@@ -8,6 +8,12 @@ tr {
   }
 
 
+  #totaltarget td
+  {
+        text-align: center;
+  }
+
+
 /*
 .container {
     display: flex;
