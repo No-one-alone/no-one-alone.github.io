@@ -1,29 +1,56 @@
 /* This is my css styles file for the Number Checker web page for Homework#2 of CS 460
- Date finished: 10/10/2018 */
+ Date finished: 10/11/2018 */
 
 
+ /* This formats the table of results placed under the "Output Guide and headings" section of the webpage */
 tr {
     display: flex;
     justify-content: space-between;
-  }
+}
 
   
-  #error{
+/* This formats the error message displayed to the user for invalid inputs*/
+#error{
     color: white;
     background-color: red;
-  }
+}
 
-/*
-  #totaltarget td
-  {
-        text-align: center;
-  }
-*/
+/* This formats the title of the webpage*/
+h1{
+  color: blue;
+}
 
-/*
-.container {
-    display: flex;
-    justify-content: space-between;
-  }
-*/
+/* This formats the greeting and explanatory text section of the webpage*/
+p{
+  color: brown;
+  font-size: 150%;
+}
 
+
+/*This sets the background color of the webpage*/
+body{
+    background-color: gainsboro;
+}
+
+/*This formates the first input number box text label in the webpage*/
+div.inside1{
+  color: green;
+  font-size: 120%;
+}
+
+/*This formates the second input number box text label in the webpage*/
+div.inside2{
+  color: green;
+  font-size: 120%;
+}
+
+/* This formats the labels for the checkboxes in the webpage*/
+div.col-sm-8{
+  color: green;
+  font-size: 120%;
+}
+
+/* This formats the "Output Guide" and inserted results of "analyze" */
+h3{
+  color: royalblue
+}
