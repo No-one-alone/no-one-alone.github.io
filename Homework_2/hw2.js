@@ -88,8 +88,8 @@ function checkProperties()
 
     if(compareChecked == false && multipleChecked == false)
     {
-        propertyChecked = " \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 None checked ";
-        relationFound = " \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 Unknown";
+        propertyChecked = "None checked";
+        relationFound = "Unknown";
     }
 
     backupPropertyChecked = "";
@@ -98,21 +98,21 @@ function checkProperties()
     if(compareChecked == true)
     {
         checkCount = checkCount + 1;
-        propertyChecked = " \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 Size Comparison ";
+        propertyChecked = "Size Comparison"; //
         
         if(firstInput > secondInput)
         {
-            relationFound = "\xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 First > Second";
+            relationFound = "First > Second";
         }
 
         if(firstInput < secondInput)
         {
-            relationFound = "\xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 First < Second";
+            relationFound = "First < Second";
         }
 
         if(firstInput == secondInput)
         {
-            relationFound = "\xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 First = Second";
+            relationFound = "First = Second";
         }
 
         backupPropertyChecked = propertyChecked;
@@ -125,7 +125,7 @@ function checkProperties()
     if(multipleChecked == true)
     {
         checkCount = checkCount + 1;
-        propertyChecked = " \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 Multiple  ";
+        propertyChecked = " \xa0 \xa0 Multiple";
 
         resultOne = firstInput % secondInput;
 
@@ -133,19 +133,19 @@ function checkProperties()
 
         if(resultOne == 0)
         {
-            relationFound = "\xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 First is multiple of Second";
+            relationFound = "First is multiple of Second";
         }
         else if(resultTwo == 0)
         {
-            relationFound = "\xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 Second is multiple of First";
+            relationFound = "Second is multiple of First";
         }
         else
         {
-            relationFound = "\xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 Neither is multiple of other";
+            relationFound = "Neither is multiple of other";
         }
     }
 
-
+/*
     var node = document.getElementById("totaltarget"); 
 
     var outTable = document.createElement("table");
@@ -167,16 +167,46 @@ function checkProperties()
     cell1.innerHTML = "First: " + firstInput + ", Second: " + secondInput;
     cell2.innerHTML = propertyChecked;
     cell3.innerHTML = relationFound;
+*/
+
+//var node = $('#totaltarget')[0]; // retrieves the "totaltarget" element
+
+//var outTable = document.createElement("table");
+//outTable.setAttribute("id", "outTable");
+//node.appendChild(outTable);
+
+var rowHTML = "";
+rowHTML = rowHTML + "<table style='width:100%'><tr>";
+
+
+rowHTML = rowHTML + "<th>" + "First: " + firstInput + ", Second: " + secondInput + "</th>";
+rowHTML = rowHTML + "<th>"+ propertyChecked + "</th>";
+rowHTML = rowHTML + "<th>"+ relationFound + "</th></tr>";
+
+
+if(checkCount != 2)
+{
+     backupPropertyChecked = "";
+     backupRelationFound = "";
+     secondProperty = "";
+}
+
+
+rowHTML = rowHTML + "<tr><th>" + secondProperty + "</th>";
+rowHTML = rowHTML + "<th>"+ backupPropertyChecked + "</th>";
+rowHTML = rowHTML + "<th>"+ backupRelationFound + "</th></tr>";
+
+rowHTML = rowHTML + "<tr><th>\xa0</th></tr>";
+
+rowHTML = rowHTML + "</table>";
+
+$( ".target" ).append(rowHTML);
+//$( ".target" ).append( "<table style='width:90%'><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr></table>");
 
     
-    if(checkCount != 2)
-    {
-         backupPropertyChecked = "";
-         backupRelationFound = "";
-         secondProperty = "";
-    }
 
 
+/*
         // create empty <tr> element and add it to the first position of the table
         var row = endTable.insertRow(1);
 
@@ -189,7 +219,7 @@ function checkProperties()
         cell1.innerHTML = secondProperty;
         cell2.innerHTML = backupPropertyChecked;
         cell3.innerHTML = backupRelationFound;
-    
+*/ 
 
 /*
     if(compareCheck == true && multipleChecked == true)
