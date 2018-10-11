@@ -1,0 +1,146 @@
+<!--This is my HTML file for the Number Checker web page for Homework#2 of CS 460-->
+<!--Date finished: 10/11/2018-->
+
+<!doctype html>
+<html lang="eng">
+
+<!-----This is the link to the bootstrap part for css and js-->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<script src="../js/bootstrap.min.js"></script>
+
+<!----This is the link to my version of bootstrap css stuff----->
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<!--This is the link to my javascript file-->
+<script src="hw2.js"></script>
+
+<!--This is the link to the jQuery library I am using-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scaled=1">
+
+</head>
+
+<!--The following defines the content and structure of the number checker webpage-->
+
+<body>
+    <div class="container outer">
+        <h1>Number Checker</h1>
+        <div class="container inner">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!--Greeting to user-->
+                    <p>Ever wonder what mathematical property or relation two numbers may share?
+                        Well wonder no longer! Just input two numbers between 1 and 1000 (inclusive),
+                        check off the properties of interest to you, and click analyze to see the results.
+                    </p>
+                </div>
+            </div>
+            <form id="numberForm" method="post">
+
+                <!--This is where the error message will be inserted via javascript-->
+                <div id="error">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+
+                        <!--This is the code for where user will input their numbers-->
+                        <h4>Input Numbers</h4>
+                        <div class="inside1">
+                            <label for='first number'>First Number: &nbsp &nbsp &nbsp</label>
+                            <input type="number" min="1" max="1000" value="1" id="firstinputnumber">
+
+                        </div>
+                        <div class="inside2">
+                            <label for='second number'>Second Number:&nbsp</label>
+                            <input type="number" min="1" max="1000" value="1" id="secondinputnumber">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <!--This the Number Property selection component-->
+                        <h4>Number Properties</h4>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="outside">
+                                    <!--This is the compare check option-->
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="compare" name="compare" class="check1"><label
+                                                for="compare">&nbsp <-- Compare number size</label>
+                                        </div>
+
+                                    </div>
+
+                                    <!--This is the multiple check option-->
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="multiple" name="multiple" class="check2"><label
+                                                for="multiple">&nbsp <-- Check if multiple of other</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--once the analyze button is hit, a javascript function will be called to determine the properties of the input numbers and append it to the page-->
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <input type="submit" id="submit" value="Analyze" onclick="return propertyAnalysis()">
+                    </div>
+                </div>
+            </form>
+
+            <hr>
+            <h3>Output Guide:</h3>
+            <div class="output">
+
+                <!--Our table headings-->
+                <div class=row>
+                    <div class="col-sm-12">
+                        <table class="table" id="outtable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h4>Numbers Inputted</h4>
+                                    </th>
+                                    <th>
+                                        <h4> Property Checked</h4>
+                                    </th>
+                                    <th>
+                                        <h4>Mathematical Relation</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                <!--the output of the number checking goes here-->
+                <div class="output" id="outcontainer">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h3>
+                                <!--This is where the javascript will dynamically add the HTML for the number analysis results-->
+                                <div class="target" id="totaltarget" text-align="center"></div>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
