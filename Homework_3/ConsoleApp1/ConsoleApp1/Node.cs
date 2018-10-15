@@ -1,9 +1,10 @@
 ﻿
-/// <summary>
-/// This is a singly linked node class.
-/// </summary>
+
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// This is a singly linked node class.
+    /// </summary>
     public class Node<T>
     {
         public T Data;
