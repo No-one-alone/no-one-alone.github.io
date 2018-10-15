@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
+/// <summary>
+/// This is a singly linked node class.
+/// </summary>
 namespace ConsoleApp1
 {
-    class Node
+    public class Node<T>
     {
+        public T Data;
+        public Node<T> Next;
+
+        public Node(T data, Node<T> next)
+        {
+            this.Data = data;
+            this.Next = next;
+        }
     }
 }
