@@ -1,5 +1,4 @@
 ﻿
-
 namespace ConsoleApp1
 {
     /// <summary>
@@ -22,6 +21,10 @@ namespace ConsoleApp1
         /// <returns></returns>
         T Pop();
 
+        /// <summary>
+        /// This tests if the queue is empty
+        /// </summary>
+        /// <returns> true if the queue is empty; otherwise false </returns>
         bool IsEmpty();
 
     }
