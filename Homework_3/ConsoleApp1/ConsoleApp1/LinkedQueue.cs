@@ -20,14 +20,48 @@ namespace ConsoleApp1
         public T Push(T element)
         {
            // throw new NotImplementedException();
+           if(element == null)
+           {
+                throw new ArgumentNullException();
+           }
 
-
+           if(IsEmpty())
+           {
+                Node<T> tmp = new Node<T>(element, null);
+                Rear = Front = tmp;
+           }
+           else
+           {
+                Node<T> tmp = new Node<T>(element, null);
+                Rear.Next = tmp;
+                Rear = tmp;
+           }
+           return element;
         }
 
 
         public T Pop()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            T tmp = default(T);
+
+            if(IsEmpty())
+            {
+                throw new QueueUnderflowException("The queue was empty when pop was invoked.");
+            }
+            else if(Front == Rear)
+            {
+                tmp = Front.Data;
+                Front = null;
+                Rear = null;
+            }
+            else
+            {
+                tmp = Front.Data;
+                Front = Front.Next;
+            }
+
+            return tmp;
         }
 
       
