@@ -7,11 +7,8 @@ namespace ConsoleApp1
     /// </summary>
     public class Node<T>
     {
-        private T data;
-        private Node<T> next;
-
-        public T Data { get => data; set => data = value; }
-        public Node<T> Next { get => next; set => next = value; }
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
 
         public Node(T data, Node<T> next)
         {
