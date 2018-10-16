@@ -8,19 +8,44 @@ namespace ConsoleApp1
 {
     public class LinkedQueue<T> : IQueueInterface<T>
     {
-        public bool IsEmpty()
+        public Node<T> Front { get; set; }
+        public Node<T> Rear { get; set; }
+
+        public LinkedQueue()
         {
-            throw new NotImplementedException();
+            Front = null;
+            Rear = null;
         }
+
+        public T Push(T element)
+        {
+           // throw new NotImplementedException();
+
+
+        }
+
 
         public T Pop()
         {
             throw new NotImplementedException();
         }
 
-        public T Push(T element)
+      
+
+
+        public bool IsEmpty()
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
+           
+            if( Front == null && Rear == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
     }
 }
