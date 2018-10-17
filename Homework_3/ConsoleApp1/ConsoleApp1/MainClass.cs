@@ -57,9 +57,11 @@ namespace ConsoleApp1
 
             try
             {
-               int.TryParse(args[0], out n);
+                //int.TryParse(args[0], out n);
+                 n = int.Parse(args[0]);
             }
-            catch
+     
+            catch (FormatException e)
             {
                 Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
                 return;
@@ -68,8 +70,19 @@ namespace ConsoleApp1
             LinkedList<String> output = GenerateBinaryRepresentationList(n);
 
             //int maxLength = output.Count();
-            int maxLength = output.Last.Value.Length;
+            int maxLength;
 
+            try
+            {
+                maxLength = output.Last.Value.Length;
+            }
+            catch(NullReferenceException)
+            {
+                Console.WriteLine("I'm sorry, I can't use the non-positive integer: " + args[0]);
+                return;
+            }
+
+      
             foreach (string item in output)
             {
                 for(int i = 0; i < maxLength - item.Length; ++i)

@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+/// <summary>
+/// This namespace holds the C# equivalent of the LinkedQueue.java program code and structure.
+/// </summary>
 namespace ConsoleApp1
 {
     public class LinkedQueue<T> : IQueueInterface<T>
@@ -23,7 +22,8 @@ namespace ConsoleApp1
            if(element == null)
            {
                 throw new ArgumentNullException();
-           }
+                //throw new System.NullReferenceException();
+            }
 
            if(IsEmpty())
            {
