@@ -50,7 +50,7 @@ namespace ConsoleApp1
             if(args.Length < 1)
             {
                 Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
-                Console.WriteLine("\tjava Main 12");
+                Console.WriteLine("\tConsoleApp1 12");
 
                 return;
             }
@@ -67,9 +67,10 @@ namespace ConsoleApp1
 
             LinkedList<String> output = GenerateBinaryRepresentationList(n);
 
-            int maxLength = output.Count();
+            //int maxLength = output.Count();
+            int maxLength = output.Last.Value.Length;
 
-            foreach(string item in output)
+            foreach (string item in output)
             {
                 for(int i = 0; i < maxLength - item.Length; ++i)
                 {
