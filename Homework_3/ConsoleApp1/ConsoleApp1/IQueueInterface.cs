@@ -14,7 +14,7 @@ namespace ConsoleApp1
         /// <summary>
         /// This adds an element to the rear of the queue.
         /// </summary>
-        /// <param name="element"></param>
+        /// <param name="element">A node element</param>
         /// <returns>The element that was enqueued</returns>
         T Push(T element);
 
