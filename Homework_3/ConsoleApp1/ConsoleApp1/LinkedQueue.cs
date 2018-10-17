@@ -64,9 +64,6 @@ namespace ConsoleApp1
             return tmp;
         }
 
-      
-
-
         public bool IsEmpty()
         {
            // throw new NotImplementedException();
@@ -80,6 +77,5 @@ namespace ConsoleApp1
                 return false;
             }
         }
-
     }
 }
