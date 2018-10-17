@@ -754,18 +754,22 @@ namespace ConsoleApp1
 
 ### Part 3.6: Final Results
 
-This shows how the overall file structure of my homework #3 project was organized in Visual Studio which is pretty similar to homework #1.
+This shows how the overall file structure of my homework #3 project was organized in Visual Studio Code which is a little different compared to the last few homeworks due to the structure and content of a C# console app created via Visual Studio IDE.
 
-![FileStructure](filestructurehw2.PNG)
+![FileStructure](hw3_file_organization.PNG)
 
-Finally, we have a picture of the actual completed web page in its default state.
+Next, we have a picture of the behavior of the original java program.
 
-![Webpages](webpageofhw2.PNG)
+![Webpag](java_progam_behavior.PNG)
 
-And another after some user interaction.
+And a picture of the near identical behavior of the C# program it was translated into.
 
-![Webpages](webpageofhw2inaction.PNG)
+![Web](csharp_progam_behavior.PNG)
 
-As we can see, everything works and comes close to what was originally seen in the sketch made at the start of this project.
+As we can see, everything works and is identical in behavior to original exceptingg the inclusion of some additional exception handling seen with new message for the user
 
-In general, this was another interesting experience in creating a webpage using HTML, styling it with CSS, and now adding dynamic behavior using Javascript along with jQuery.
+```
+I'm sorry, I can't use the non-positive integer: -1
+```
+
+In general, this was an interesting experience in becoming aquainted with the Visual Studio IDE and the C# language along with using these to translate a java program into an equivalent version wholly written in C# but with effectively identical behavior.
