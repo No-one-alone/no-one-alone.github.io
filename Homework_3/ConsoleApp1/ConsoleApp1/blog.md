@@ -1,6 +1,6 @@
 ## Homework 3
 
-Regarding the third homework, we had to learn how to install and use the Visual Studio IDE, learn the C# language,and rewrite an instructor-provided java program such that it matched the original as closely as possible but with C# instead of java while having the same program behavior. We also learned to use XML comments due to their utility in the Visual Studio environment along with implementing a .gitignore file to avoid having to add a large number of unnecessary files to our git repositories.
+Regarding the third homework, we had to learn how to install and use the Visual Studio IDE, learn the C# language, and rewrite an instructor-provided java program such that it matched the original as closely as possible but with C# instead of java while having the same program behavior and output results. We also learned to use XML comments due to their utility in the Visual Studio environment along with implementing a .gitignore file to avoid having to add a large number of unnecessary files to our git repositories.
 
 
 ### Homework 3 Links
@@ -26,7 +26,7 @@ I downloaded the Visual Studio program from [here](https://visualstudio.microsof
 
 ### Part 3: Translating a Java binary number generator program into an equivalent C# program and notes on important language features.
 
-As per the assignment directions, I downloaded the "javacode2.zip" file from the homework#3 assignment page which contained the following files which made up the java program.
+As per the assignment directions, I downloaded the "javacode2.zip" file from the homework#3 assignment page which contained the following five files which made up the java program.
 
 ```
 Node.java
@@ -36,7 +36,7 @@ LinkedQueue.java
 Main.java
 ```
 
-The program served and behaved as a binary number list generator with the number of entries determined by a user supplied number (see bottom of webpage for program output and behavior):
+The program served and behaved as a binary number list generator with the number of entries determined by a user supplied number (see bottom of webpage for program output and behavior) via the following command:
 
 ```
 java Main 12
@@ -51,7 +51,7 @@ We were advised to recode or implement these classes into C# versions and the ap
 4. LinkedQueue.java ⟶ LinkedQueue.cs
 5. Main.java ⟶ ?.cs
 ```
-The file names with question marks indicate where the file name for C# version had to be different from the original java file name due C# language requirements.
+The file names with question marks indicate where the file name for the C# version had to be different from the original java file name due to C# language requirements.
 
 Ultimately, I ended up with these five files at the end.
 
@@ -125,7 +125,7 @@ namespace ConsoleApp1
 }
 
 ```
-Note that the C# language requires classes to be enclosed within organizing namespaces such as the ConsoleApp1 for our project seen here.
+Note that the C# language requires classes to be enclosed within organizing namespaces such as the "ConsoleApp1" for our project seen here.
  
 Regarding the properties, the javacode had some standard fields as seen here.
 
@@ -133,7 +133,7 @@ Regarding the properties, the javacode had some standard fields as seen here.
 	public T data;
 	public Node<T> next;
 ```
-These were rewritten with automatic properities seen here.
+These were rewritten as automatic properties seen here.
 
 ```csharp
      /// <summary>
@@ -223,9 +223,14 @@ namespace ConsoleApp1
 }
 
 ```
+Notice that the name of the interface was changed to start with a capital "I". This change was suggested by the Visual Studio program itself and reflects C# convention regarding the naming of interfaces as can be read [here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/).
+
+Otherwise, the main changes involved the type name change from "boolean" to "bool" as found in C# and removal of the "throws QueueUnderflowException" component as C# does not support the feature in the same manner as Java.
 
 
 ### Part 3.3: QueueUnderflowException.java ⟶ QueueUnderflowException.cs
+
+Likewise, the java file for QueueUnderflowException seen here
 
 ```java
 
@@ -249,6 +254,10 @@ public class QueueUnderflowException extends RuntimeException
 
 
 ```
+
+
+became this
+
 
 ```csharp
 
@@ -282,13 +291,14 @@ namespace ConsoleApp1
     }
 }
 
-
-
-
 ```
+Here, I found that "RuntimeException" was not supported in C# and had to use "Exception" instead with the C# form of declaration involving the syntax ":" instead of the keyword "extends" which is also not supported in C#.
+In addition, note the use of the same ":" syntax to declare the use of the "base(message)" for storing thrown exception messages.
+Lastly, I had to add the import "using System;" to provide proper support for the above features.
 
 ### Part 3.4: LinkedQueue.java ⟶ LinkedQueue.cs
 
+Yet, again we have the java version of the LinkedQueue file here
 
 ```java
 
@@ -370,10 +380,9 @@ public class LinkedQueue<T> implements QueueInterface<T>
 
 }
 
-
-
-
 ```
+
+which became
 
 ```csharp
 
@@ -485,23 +494,13 @@ namespace ConsoleApp1
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
+
+Beyond the differences already discussed in the previous file translations, we see how "default(T)" had to be used in place of "null"  for "T tmp" and how "NullPointerException()" was replaced with "ArgumentNullException()" as per C# language requirements.
 
 ### Part 3.5: Main.java ⟶ MainClass.cs
 
+Finally, we have the Main java file
 
 ```java
 
@@ -605,11 +604,9 @@ public class Main
     } 
 } 
 
-
-
-
-
 ```
+
+which in turn became
 
 ```csharp
 
@@ -749,10 +746,28 @@ namespace ConsoleApp1
 
 
 ```
+Again excepting the differences already discussed, it is very similar to java. Differences include that some of the methods have to be capitalized such as ".Append()" instead of having ".append()" along with some more significant changes. Namely, instead of "System.out.print()" and "System.out.println()", one has to use "Console.Write()" and "Console.Writeline()" to obtain the same behavior, "Integer.parseInt(args[0])" became the rather similar "int.Parse(args[0])", "output.getLast().length()" was instead the slightly longer "output.Last.Value.Length", "Main" had to become "MainClass" to avoid conflict with the "main method" program entry point, and the for loop declaration had "foreach (string item in output)" in place of "for(String s : output)". I had to add the import statement "using System.Collections.Generic" in place of the "import java.util.LinkedList" to support linked list usage and "using System.Text" for character encoding.  Lastly, I added the additional "try/catch" statements around the maxLength retrieval to catch invalid integer input from the user.
 
 
+### Part 3.6: XML comments
 
-### Part 3.6: Final Results
+The required XML comments proved easy to implement and use in the C# program. All one had to do in the IDE was simply type
+```
+  ///
+```
+above the line of code in question and one would get something like the following
+
+```
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="args"></param>
+  /// <returns></returns>
+```
+In particular, the exact HTML elements generated are context sensitive in that what is generated is directly matched with the type and level of code statement e.g. (a method/function -with or without parameter vs. a class vs. an interface vs. a namespace).
+
+
+### Part 3.7: Final Results
 
 This shows how the overall file structure of my homework #3 project was organized in Visual Studio Code which is a little different compared to the last few homeworks due to the structure and content of a C# console app created via Visual Studio IDE.
 
@@ -766,10 +781,10 @@ And a picture of the near identical behavior of the C# program it was translated
 
 ![Web](csharp_progam_behavior.PNG)
 
-As we can see, everything works and is identical in behavior to original exceptingg the inclusion of some additional exception handling seen with new message for the user
+As we can see, everything works regarding our translated C# program which is identical in behavior and output to the original java program excepting the inclusion of some additional exception handling as seen with the new message for the user
 
 ```
 I'm sorry, I can't use the non-positive integer: -1
 ```
 
-In general, this was an interesting experience in becoming aquainted with the Visual Studio IDE and the C# language along with using these to translate a java program into an equivalent version wholly written in C# but with effectively identical behavior.
+In general, this was an interesting experience in becoming aquainted with the Visual Studio IDE and the C# language along with using this knowledge to translate a Java program into an equivalent version wholly written in C# but with effectively identical behavior.
