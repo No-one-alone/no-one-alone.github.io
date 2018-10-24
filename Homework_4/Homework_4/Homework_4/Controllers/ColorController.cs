@@ -12,6 +12,7 @@ namespace Homework_4.Controllers
         [HttpGet]
         public ActionResult ColorChooser()
         {
+           
             return View();
         }
     }
