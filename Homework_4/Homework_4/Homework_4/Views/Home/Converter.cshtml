@@ -2,7 +2,7 @@
     ViewBag.Title = "Converter";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+
 
 <p>Use this area to provide additional information.</p>
 
@@ -15,36 +15,40 @@
                 Miles:
             </label>
 
-            <input type="number" class="layout-form" id="input" step=".01" name="mile" placeholder="Type your distance" required/>
+            <input type="number" class="layout-form" id="input" step=".01" name="mile" placeholder="Type your distance" required />
         </div>
 
-        
+        <div class="col-md-6 form-group">
 
+            <h3>Metric Units</h3>
 
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="mm" value="millimeters" />
+                <label class="form-check-label" for="ul">Millimeters</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="cm" value="centimeters" />
+                <label class="form-check-label" for="ul">Centimeters</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="m" value="meters" />
+                <label class="form-check-label" for="ul">Millimeters</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="km" value="kilometers" />
+                <label class="form-check-label" for="ul">Kilometers</label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Convert</button>
+        </div>
 
     </form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h3>@ViewBag.Message</h3>
 
 
 </div>
