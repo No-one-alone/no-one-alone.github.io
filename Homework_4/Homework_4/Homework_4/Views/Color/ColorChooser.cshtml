@@ -11,7 +11,7 @@
 {
     <div class="form-group">
         @Html.Label("first_color", "First Color")
-        @Html.TextBox("first_color", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{ 3, 6}", type = "text", placeholder = "#eeffdd", required = "required" })
+        @Html.TextBox("first_color", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{ 3, 6}", type = "text", placeholder = "#AABBCC", required = "required" })
 
 
     </div>
@@ -19,7 +19,7 @@
     <div class="form-group">
 
         @Html.Label("second_color", "Second Color")
-        @Html.TextBox("second_color", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{3,6}", type = "text", placeholder = "#eeffdd", required = "required" })
+        @Html.TextBox("second_color", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{3, 6}", type = "text", placeholder = "#DDEEFF", required = "required" })
 
     </div>
 
