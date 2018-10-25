@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
 //added this
 using System.Diagnostics;
+using System.Web.Mvc;
 
 namespace Homework_4.Controllers
 {
@@ -28,7 +24,7 @@ namespace Homework_4.Controllers
             Debug.WriteLine(miles);
             Debug.WriteLine(measure);
 
-            double calcedConversion = 0;
+            double calcedConversion = -1;
 
             if(measure == "millimeters")
             {
@@ -45,7 +41,7 @@ namespace Homework_4.Controllers
                 calcedConversion = miles * 1609.344;
                 ViewBag.result = true;
             }
-            else if (measure == "km")
+            else if (measure == "kilometers")
             {
                 calcedConversion = miles * 1.609344;
                 ViewBag.result = true;
