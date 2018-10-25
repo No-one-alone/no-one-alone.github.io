@@ -23,8 +23,8 @@ namespace Homework_4.Controllers
         [HttpPost]
         public ActionResult ColorChooser(String ColorOne, string ColorTwo)
         {
-            ColorOne = Request.Form["Color1"];
-            ColorTwo = Request.Form["Color2"];
+            ColorOne = Request.Form["first_color"];
+            ColorTwo = Request.Form["second_color"];
 
             Debug.WriteLine(ColorOne);
 

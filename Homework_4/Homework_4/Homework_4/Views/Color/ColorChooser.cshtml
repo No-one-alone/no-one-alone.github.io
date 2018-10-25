@@ -10,16 +10,16 @@
 @using (Html.BeginForm("ColorChooser", "Color", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.Label("color1", "Color #1")
-        @Html.TextBox("Color1", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{ 3, 6}", type = "text", placeholder = "#eeffdd", required = "required" })
+        @Html.Label("first_color", "First Color")
+        @Html.TextBox("first_color", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{ 3, 6}", type = "text", placeholder = "#eeffdd", required = "required" })
 
 
     </div>
 
     <div class="form-group">
 
-        @Html.Label("color2", "Color #2")
-        @Html.TextBox("Color2", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{3,6}", type = "text", placeholder = "#eeffdd", required = "required" })
+        @Html.Label("second_color", "Second Color")
+        @Html.TextBox("second_color", null, htmlAttributes: new { @class = "form-control", pattern = "#[0-9A-Fa-f]{3,6}", type = "text", placeholder = "#eeffdd", required = "required" })
 
     </div>
 
