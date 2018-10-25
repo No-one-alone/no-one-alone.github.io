@@ -25,26 +25,34 @@
 
     <button type="submit" value="" class="btn btn-primary">Mix Colors</button>
 
+
 }
 
-@* this a comment*@
+@* this a comment *@
 
 @if (ViewBag.show)
 {
-    <div class="row">
-
-        <div class="col-sm-6" style="@ViewBag.shape"></div>
-
-        <div class="col-sm-6" style="width:50px; height: 75px;"><h2>+</h2></div>
-
-        <div class="col-sm-6" style="@ViewBag.shape1"></div>
-
-        <div class="col-sm-6" style="width:50px; height: 75px;"><h2>=</h2></div>
-
-        <div class="col-sm-6" style="@ViewBag.shape2"></div>
+    <br />
 
 
-    </div>
+        <div class="row" style="padding-left:20px;">
+
+            <div class="col-sm-6" style="@ViewBag.shape;"></div>
+
+            <div class="col-sm-6" style="width:50px; height: 75px;"><h2>+</h2></div>
+
+            <div class="col-sm-6" style="@ViewBag.shape1"></div>
+
+            <div class="col-sm-6" style="width:50px; height: 75px;"><h2>=</h2></div>
+
+            <div class="col-sm-6" style="@ViewBag.shape2"></div>
+
+
+        </div>
+    
+
+
+
 }
 
 

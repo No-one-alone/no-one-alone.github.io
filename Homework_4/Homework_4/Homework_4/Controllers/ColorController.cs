@@ -91,11 +91,11 @@ namespace Homework_4.Controllers
             {
                 ViewBag.show = true;
 
-                ViewBag.shape = "width: 55px; height: 55px; border: 1px soild #000; background:" + ColorOne + ";";
+                ViewBag.shape = "width: 70px; height: 70px; border: 1px soild #000; background:" + ColorOne + ";";
 
-                ViewBag.shape1 = "width: 55px; height: 55px; border: 1px soild #000; background:" + ColorTwo + ";";
+                ViewBag.shape1 = "width: 70px; height: 70px; border: 1px soild #000; background:" + ColorTwo + ";";
 
-                ViewBag.shape2 = "width: 55px; height: 55px; border: 1px soild #000; background:" + mixColor + ";";
+                ViewBag.shape2 = "width: 70px; height: 70px; border: 1px soild #000; background:" + mixColor + ";";
 
             }
 
