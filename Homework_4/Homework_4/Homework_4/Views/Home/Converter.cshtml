@@ -1,49 +1,54 @@
 ﻿@{
     ViewBag.Title = "Convert Miles to Metric";
 }
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 
 
-<p>Use this area to provide additional information.</p>
+<b>Miles</b>
 
 <!--added everything below after first major file edit commit-->
 <div class="row">
 
     <form action="">
-        <div class="col-md-6 form-group">
-            <label for="input">
-                Miles:
-            </label>
 
-            <input type="number" class="layout-form" id="input" step=".01" name="mile" placeholder="Type your distance" required />
-        </div>
+        
+            <div class="col-md-6 form-group">
 
-        <div class="col-md-6 form-group">
+                <input type="number"  style="border-radius: 5px" class="layout-form" id="input" step=".01" name="mile" placeholder="Type the distance" required />
 
-            <h3>Metric Units</h3>
-
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="metric-unit" id="mm" value="millimeters" />
-                <label class="form-check-label" for="ul">Millimeters</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="metric-unit" id="cm" value="centimeters" />
-                <label class="form-check-label" for="ul">Centimeters</label>
-            </div>
+            <div class="col-md-6 form-group">
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="metric-unit" id="m" value="meters" />
-                <label class="form-check-label" for="ul">Meters</label>
-            </div>
+                <h3>Select a unit</h3>
+                <hr>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="metric-unit" id="km" value="kilometers" />
-                <label class="form-check-label" for="ul">Kilometers</label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit" id="mm" value="millimeters" />
+                    <label class="form-check-label" for="ul">Millimeters</label>
+                </div>
 
-            <button class="btn btn-primary" type="submit">Convert</button>
-        </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit" id="cm" value="centimeters" />
+                    <label class="form-check-label" for="ul">Centimeters</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit" id="m" value="meters" />
+                    <label class="form-check-label" for="ul">Meters</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit" id="km" value="kilometers" />
+                    <label class="form-check-label" for="ul">Kilometers</label>
+                </div>
+
+
+                <br />
+            </div>
+    
+      
+        <button style="margin:auto;display:block" align="center" class="btn btn-primary" type="submit">Convert</button>
 
     </form>
 
