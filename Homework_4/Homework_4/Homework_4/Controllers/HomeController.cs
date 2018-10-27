@@ -18,8 +18,12 @@ namespace Homework_4.Controllers
         {
             // ViewBag.Message = "Your application description page.";
 
-            ViewBag.result = false;
-            double miles = Convert.ToDouble(Request.QueryString["mile"]);
+            ViewBag.check = false;
+            bool result = true;
+            //  double miles = Convert.ToDouble(Request.QueryString["mile"]);
+            double miles = -1;
+            result = Double.TryParse(Request.QueryString["mile"], out miles);
+
             string measure = Request.QueryString["metric-unit"];
             Debug.WriteLine(miles);
             Debug.WriteLine(measure);
@@ -29,27 +33,27 @@ namespace Homework_4.Controllers
             if(measure == "millimeters")
             {
                 calcedConversion = miles * 1609344;
-                ViewBag.result = true;
+                ViewBag.check = true;
             }
             else if(measure == "centimeters")
             {
                 calcedConversion = miles * 160934.4;
-                ViewBag.result = true;
+                ViewBag.check = true;
             }
             else if (measure == "meters")
             {
                 calcedConversion = miles * 1609.344;
-                ViewBag.result = true;
+                ViewBag.check = true;
             }
             else if (measure == "kilometers")
             {
                 calcedConversion = miles * 1.609344;
-                ViewBag.result = true;
+                ViewBag.check = true;
             }
 
 
            
-            string message = "Conversion: " + Convert.ToString(calcedConversion) + " " + measure;
+            string message = miles + " miles is equal to " + Convert.ToString(calcedConversion) + " " + measure;
             ViewBag.Message = message;
 
             

@@ -51,6 +51,10 @@
 
     </form>
 
-   <h3 style="color:darkred"><b> @ViewBag.Message</b></h3> 
+    @*This evaluates the value of check in Viewbag to ensure valid information was submitted by the user*@
+    @if (ViewBag.check)
+    {
+        <h3 style="color:darkred"><b> @ViewBag.Message</b></h3>
+    }
 
-</div>
+    </div>
