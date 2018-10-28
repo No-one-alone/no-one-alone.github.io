@@ -7,6 +7,7 @@ using System.Web.Mvc;
 //added this
 using System.Diagnostics;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace Homework_4.Controllers
 {
@@ -21,92 +22,60 @@ namespace Homework_4.Controllers
         }
 
         [HttpPost]
-        public ActionResult ColorChooser(String ColorOne, string ColorTwo)
+        public ActionResult ColorChooser(String FirstColor, string SecondColor)
         {
-            ColorOne = Request.Form["first_color"];
-            ColorTwo = Request.Form["second_color"];
+            FirstColor = Request.Form["first_color"];
+            SecondColor = Request.Form["second_color"];
 
-            Debug.WriteLine(ColorOne);
+            FirstColor = FirstColor.Remove(1, 1);
 
-            Debug.WriteLine(ColorTwo);
-
-            int color_A;
-
-            int color_R;
-
-            int color_B;
-
-            int color_G;
-
-            Color rgb_c1 = ColorTranslator.FromHtml(ColorOne);
-
-            Color rgb_c2 = ColorTranslator.FromHtml(ColorTwo);
+            FirstColor = FirstColor + 'G';
 
 
-            if(rgb_c1.A + rgb_c2.A >= 255)
+            ViewBag.message = "";
+            if (FirstColor != null && SecondColor != null && Regex.IsMatch(FirstColor, "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$") && Regex.IsMatch(SecondColor, "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"))
             {
-                color_A = 255;
-            }
-            else
-            {
-                color_A = rgb_c1.A + rgb_c2.A;
-            }
+
+                Debug.WriteLine(FirstColor);
+
+                Debug.WriteLine(SecondColor);
+
+                int AlphaComponent, RedComponent, GreenComponent, BlueComponent;
 
 
+                Color FirstColor_ARGB = ColorTranslator.FromHtml(FirstColor);
 
-            if (rgb_c1.R + rgb_c2.R >= 255)
-            {
-                color_R = 255;
-            }
-            else
-            {
-                color_R = rgb_c1.R + rgb_c2.R;
-            }
+                Color SecondColor_ARGB = ColorTranslator.FromHtml(SecondColor);
 
 
+                AlphaComponent = FirstColor_ARGB.A + SecondColor_ARGB.A >= 255 ? 255 : FirstColor_ARGB.A + SecondColor_ARGB.A;
 
-            if (rgb_c1.B + rgb_c2.B >= 255)
-            {
-                color_B = 255;
-            }
-            else
-            {
-                color_B = rgb_c1.B + rgb_c2.B;
-            }
+                RedComponent = FirstColor_ARGB.R + SecondColor_ARGB.R >= 255 ? 255 : FirstColor_ARGB.R + SecondColor_ARGB.R;
 
+                GreenComponent = FirstColor_ARGB.G + SecondColor_ARGB.G >= 255 ? 255 : FirstColor_ARGB.G + SecondColor_ARGB.G;
 
+                BlueComponent = FirstColor_ARGB.B + SecondColor_ARGB.B >= 255 ? 255 : FirstColor_ARGB.B + SecondColor_ARGB.B;
 
-            if (rgb_c1.G + rgb_c2.G >= 255)
-            {
-                color_G = 255;
-            }
-            else
-            {
-                color_G = rgb_c1.G+ rgb_c2.G;
-            }
+                string ColorMixResult = ColorTranslator.ToHtml(Color.FromArgb(AlphaComponent, RedComponent, GreenComponent, BlueComponent ));
+           
 
-            string mixColor = ColorTranslator.ToHtml(Color.FromArgb(color_A, color_R, color_B, color_G));
-
-            if(ColorOne != null && ColorTwo != null)
-            {
                 ViewBag.show = true;
 
-                ViewBag.shape = "width: 70px; height: 70px; border: 1px soild #000; background:" + ColorOne + ";";
+                ViewBag.firstInputColor = "width: 70px; height: 70px; border: 1px soild #000; background:" + FirstColor + ";";
 
-                ViewBag.shape1 = "width: 70px; height: 70px; border: 1px soild #000; background:" + ColorTwo + ";";
+                ViewBag.secondInputColor = "width: 70px; height: 70px; border: 1px soild #000; background:" + SecondColor + ";";
 
-                ViewBag.shape2 = "width: 70px; height: 70px; border: 1px soild #000; background:" + mixColor + ";";
+                ViewBag.outputColor = "width: 70px; height: 70px; border: 1px soild #000; background:" + ColorMixResult + ";";
 
             }
-
+            else
+            {
+                ViewBag.show = false;
+                ViewBag.message = "Input was invalid!";
+                
+            }
 
             return View();
-
-
-
-
         }
-
-
     }
 }
