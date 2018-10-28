@@ -14,7 +14,7 @@
 
         <div class="col-md-6 form-group">
 
-            <input type="number" style="border-radius: 5px" class="layout-form" id="input" step=".01" name="mile" placeholder="Type the distance" required />
+            <input type="number" style="border-radius: 5px" class="layout-form" id="input" step=".01" name="mile" placeholder="Type the distance"/>
 
         </div>
 
@@ -52,9 +52,15 @@
     </form>
 
     @*This evaluates the value of check in Viewbag to ensure valid information was submitted by the user*@
-    @if (ViewBag.check)
+   
+    @if (ViewBag.checkMeasure == true && ViewBag.checkUnit == true)
     {
-        <h3 style="color:darkred"><b> @ViewBag.Message</b></h3>
+         <h3 style="color:darkred"><b> @ViewBag.Message</b></h3>
     }
+    else
+    {
+         <h3 style="color:red"><b> @ViewBag.Message</b></h3>
+    }
+   
 
-    </div>
+</div>

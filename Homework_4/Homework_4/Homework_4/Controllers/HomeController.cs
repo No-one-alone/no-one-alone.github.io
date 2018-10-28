@@ -18,45 +18,106 @@ namespace Homework_4.Controllers
         {
             // ViewBag.Message = "Your application description page.";
 
-            ViewBag.check = false;
-            bool result = true;
+            ViewBag.checkMeasure = false;
+            ViewBag.checkUnit = false;
+
+
             //  double miles = Convert.ToDouble(Request.QueryString["mile"]);
             double miles = -1;
-            result = Double.TryParse(Request.QueryString["mile"], out miles);
+            ViewBag.checkMeasure = Double.TryParse(Request.QueryString["mile"], out miles);
 
-            string measure = Request.QueryString["metric-unit"];
+            string unit = Request.QueryString["metric-unit"];
+
+
             Debug.WriteLine(miles);
-            Debug.WriteLine(measure);
+            Debug.WriteLine(unit);
 
             double calcedConversion = -1;
 
-            if(measure == "millimeters")
+            if(unit == "millimeters")
             {
                 calcedConversion = miles * 1609344;
-                ViewBag.check = true;
+                ViewBag.checkUnit = true;
             }
-            else if(measure == "centimeters")
+            else if(unit == "centimeters")
             {
                 calcedConversion = miles * 160934.4;
-                ViewBag.check = true;
+                ViewBag.checkUnit = true;
             }
-            else if (measure == "meters")
+            else if (unit == "meters")
             {
                 calcedConversion = miles * 1609.344;
-                ViewBag.check = true;
+                ViewBag.checkUnit = true;
             }
-            else if (measure == "kilometers")
+            else if (unit == "kilometers")
             {
                 calcedConversion = miles * 1.609344;
-                ViewBag.check = true;
+                ViewBag.checkUnit = true;
             }
 
 
-           
-            string message = miles + " miles is equal to " + Convert.ToString(calcedConversion) + " " + measure;
-            ViewBag.Message = message;
+            string message = "";
 
-            
+            if (ViewBag.checkMeasure == true && ViewBag.checkUnit == true)
+            {
+                message = miles + " miles is equal to " + Convert.ToString(calcedConversion) + " " + unit;
+            }
+            else if(Request.QueryString["mile"] == null && Request.QueryString["metric-unit"] == null)
+            {
+                message = "";
+            }
+            else if(Request.QueryString["mile"] == "" && Request.QueryString["metric-unit"] == null)
+            {
+                message = "No inputs were provided!";
+            }
+            else if (Request.QueryString["mile"] == null && Request.QueryString["metric-unit"] == "")
+            {
+                message = "No inputs were provided!";
+            }
+            else if (Request.QueryString["mile"] == "" && Request.QueryString["metric-unit"] == "")
+            {
+                message = "No inputs were provided!";
+            }
+            else if (Request.QueryString["mile"] == "" && ViewBag.checkUnit == false)
+            {
+                message = Request.QueryString["mile"] + "Must specify a number and " + Request.QueryString["metric-unit"] + " is not a valid unit!";
+            }
+            else if (Request.QueryString["mile"] == null && ViewBag.checkUnit == false)
+            {
+                message = Request.QueryString["mile"] + "Must specify a number and " + Request.QueryString["metric-unit"] + " is not a valid unit!";
+            }
+            else if (ViewBag.checkMeasure == false && ViewBag.checkUnit == false)
+            {
+                message = Request.QueryString["mile"] + " is not a number and " + Request.QueryString["metric-unit"] + " is not a valid unit!";
+            }
+            else if (Request.QueryString["mile"] == null)
+            {
+                message = "Must specify a number!";
+            }
+            else if (Request.QueryString["mile"] == "")
+            {
+                message = "Must specify a number!";
+            }
+            else if(ViewBag.checkMeasure == false)
+            {
+                message = Request.QueryString["mile"] + " is not a number!";
+            }
+            else if (Request.QueryString["metric-unit"] == "")
+            {
+                message = "Must specify a unit type!";
+            }
+            else if (Request.QueryString["metric-unit"] == null)
+            {
+                message = "Must specify a unit type!";
+            }
+            else if(ViewBag.checkUnit == false)
+            {
+                message = Request.QueryString["metric-unit"] + " is not a valid unit type!";
+            }
+
+       
+            ViewBag.Message = message;
+        
             return View();
         }
 
