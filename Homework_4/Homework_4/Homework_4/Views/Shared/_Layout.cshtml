@@ -16,11 +16,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @* This is a Razor language Html.ActionLink. The first parameter specifies the text of the navbar option,
+                   the second specifies the controller function to be used i.e. Index(), and the third, the folder which contains the Views.*@
                 @Html.ActionLink("Homework 4", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-         
+                    @* This is a Razor language Html.ActionLink. The first parameter specifies the text of the navbar option,
+                       the second specifies the controller function to be used i.e. ColorChooser(), and the third, the folder which contains the Views.*@
                     <li>@Html.ActionLink("Color Chooser", "ColorChooser", "Color")</li>
                 </ul>
             </div>
@@ -30,6 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
+            @*This was changed to have my name*@
             <p>&copy; @DateTime.Now.Year - Khorben Boyer</p>
         </footer>
     </div>
