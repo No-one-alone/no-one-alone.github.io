@@ -25,14 +25,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    @* This is a Razor language Html.ActionLink. The first parameter "Color Chooser" specifies the text of the navbar option,
-                       the second specifies the controller function to be used i.e. ColorChooser(), and the third, the folder which contains the Views.*@
-                    <li>@Html.ActionLink("Color Chooser", "ColorChooser", "Color")</li>
-
                     @* This a Razor language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
                        Specifically, the first parameter "Converter" will be the text displayed as a navbar option, the second parameter "Converter" is the name of the controller function to be used,
                        and "Home" is the name of the folder that contains the Views specified by the Index.cshtml and Converter.cshtml files.*@
                     <li>@Html.ActionLink("Converter", "Converter", "Home")</li>
+
+                    @* This is a Razor language Html.ActionLink. The first parameter "Color Chooser" specifies the text of the navbar option,
+                       the second specifies the controller function to be used i.e. ColorChooser(), and the third, the folder which contains the Views.*@
+                    <li>@Html.ActionLink("Color Chooser", "ColorChooser", "Color")</li>
+
+
 
                 </ul>
             </div>
