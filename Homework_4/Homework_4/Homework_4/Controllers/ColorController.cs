@@ -27,9 +27,9 @@ namespace Homework_4.Controllers
             FirstColor = Request.Form["first_color"];
             SecondColor = Request.Form["second_color"];
 
-            FirstColor = FirstColor.Remove(1, 1);
+           // FirstColor = FirstColor.Remove(1, 1);
 
-            FirstColor = FirstColor + 'G';
+           // FirstColor = FirstColor + 'G';
 
 
             ViewBag.message = "";
