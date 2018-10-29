@@ -4,3 +4,4 @@ This is a test of the creation of the new official homework#2 feature branch to 
 Merge of hw2 feature branch was successful!
 Started hw3 feature branch.
 advancing master branch
+Advancing master branch before merge of Hw4 feature branches.
