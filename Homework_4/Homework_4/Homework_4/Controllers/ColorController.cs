@@ -61,11 +61,11 @@ namespace Homework_4.Controllers
 
                 ViewBag.show = true;
 
-                ViewBag.firstInputColor = "width: 70px; height: 70px; border: 1px soild #000; background:" + FirstColor + ";";
+                ViewBag.firstInputColor = "width: 70px; height: 70px; border: 1px solid #D3D3D3; background:" + FirstColor + ";";
 
-                ViewBag.secondInputColor = "width: 70px; height: 70px; border: 1px soild #000; background:" + SecondColor + ";";
+                ViewBag.secondInputColor = "width: 70px; height: 70px; border: 1px solid #D3D3D3; background:" + SecondColor + ";";
 
-                ViewBag.outputColor = "width: 70px; height: 70px; border: 1px soild #000; background:" + ColorMixResult + ";";
+                ViewBag.outputColor = "width: 70px; height: 70px; border: 1px solid #D3D3D3; background:" + ColorMixResult + ";";
 
             }
             else
