@@ -1,7 +1,9 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@*This file specifieds the text containers and content for the landing page.*@
+@{
+    ViewBag.Title = "Home Page"; // Title of the homepage.
 }
 
+@*This contains a basic description of the assignment to be displayed on the introduction component of the web page.*@
 <div class="jumbotron">
     <h1>CS 460 Homework 4</h1>
     <p class="lead">
@@ -15,7 +17,7 @@
 </div>
 
 <div class="row">
- 
+    @*This contains a description of what the mile distance converter does and the button that leads to it.*@
     <div class="col-md-6">
         <h2>Mile to Metric Converter</h2>
         <p>
@@ -24,9 +26,10 @@
             Note that it uses query strings to send form data obtained from user input to the
             server. The server will calculate the answer and return it in the requested page to the user.
         </p>
-        <!-- <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p> -->
-        <!-- <p><a class="btn btn-default" href="/Home/Converter">Try it! &raquo;</a></p> -->
-        <p><a> class="btn btn-primary" @Html.ActionLink("Try it!", "Converter", "Home")</a></p> 
+        @*This specifies the button that links and takes the user to the Converter page via a Razor Html.ActionLink()
+           The first parameter gives the name of the button, the second gives the name of a controller function,
+            and the third, the name of the folder that contains the file with the appropriate View.*@
+        <p><a class="btn btn-primary" @Html.ActionLink("Try it!", "Converter", "Home")</a></p> 
     </div>
 
 

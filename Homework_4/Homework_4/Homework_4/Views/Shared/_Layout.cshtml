@@ -16,15 +16,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--Changed Application name to homework 4-->
+                @* This a razer language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
+                   Specifically "Homework 4" will be the text displayed as a navbar option, "Index" is the name of a controller function,
+                   and "Home" is the name of the folder that contains the Views specified by the Index.cshtml file and Converter.cshtml files*@
                 @Html.ActionLink("Homework 4", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                   @* <li>@Html.ActionLink("Home", "Index", "Home")</li> *@
-                    <!--changed about to converter here-->
+
+                    @* This a razer language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
+                       Specifically "Converter" will be the text displayed as a navbar option, "Converter" is the name of a controller function,
+                       and "Home" is the name of the folder that contains the Views specified by the Index.cshtml and Converter.cshtml files.*@
                     <li>@Html.ActionLink("Converter", "Converter", "Home")</li>
-                
+
                 </ul>
             </div>
         </div>
@@ -33,6 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
+            
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
