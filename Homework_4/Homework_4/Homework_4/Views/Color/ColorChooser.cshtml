@@ -1,0 +1,80 @@
+﻿@*This file specifies the View for the Color Chooser webpage.*@
+
+@{
+    ViewBag.Title = "ColorChooser";
+}
+
+<h2>Create a New Color</h2> @*Title description of form input*@
+
+<h3>Please enter colors in HTML hexadecimal format: #AABBCC or #ABC </h3> @*This describes what to do to the user*@
+
+@*This another kind of Razor HTML helper for making forms.*@
+@using (Html.BeginForm("ColorChooser", "Color", FormMethod.Post))
+{
+    @* This is the breakdown of the Hexadecimal Color Code Regular Expression Pattern used below: "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+
+            ^		 #start of the line
+         #		 #  must constains a "#" symbols
+         (		 #  start of group #1
+          [A-Fa-f0-9]{6} #    any strings in the list, with length of 6
+          |		 #    ..or
+          [A-Fa-f0-9]{3} #    any strings in the list, with length of 3
+         )		 #  end of group #1
+        $		 #end of the line
+    *@
+
+
+    @*This creates the input text box for the first color. It usees pattern matching with Regular expressions along with more Razor HTML Helpers*@
+    <div class="form-group">
+        @Html.Label("first_color", "First Color")
+        @Html.TextBox("first_color", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#AABBCC", required = "required" })
+
+    </div>
+
+    @*This creates the input text box for the second color. It usees pattern matching with Regular expressions along with more Razor HTML Helpers*@
+    <div class="form-group">
+
+        @Html.Label("second_color", "Second Color")
+        @Html.TextBox("second_color", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#DDEEFF", required = "required" })
+
+    </div>
+
+    @* This is the button for the user to click to get the resultant mix of the input colors.*@
+    <button type="submit" value="Create" class="btn btn-primary">Mix Colors</button>
+
+
+}
+
+
+@* This code block outputs a display of the input colors and the mixed result if user input was valid
+    and outputs an error message of some kind if the user input was invalid in some way.*@
+@if (ViewBag.show)
+{
+    <br />
+
+    @*This builds the display of the three colors. Note the use of the ViewBag object to hold and pass colors.*@
+    <div class="row" style="padding-left:20px;">
+
+        <div class="col-sm-8" style="@ViewBag.firstInputColor;"></div>
+
+        <div class="col-sm-8" style="width:50px; height: 75px;"><h2>+</h2></div>
+
+        <div class="col-sm-8" style="@ViewBag.secondInputColor"></div>
+
+        <div class="col-sm-8" style="width:50px; height: 75px;"><h2>=</h2></div>
+
+        <div class="col-sm-8" style="@ViewBag.outputColor"></div>
+
+    </div>
+}
+else
+{
+    @*This builds the display of the error message. Note the use of the ViewBag object to hold and pass the message.*@
+    <div class="row" style="padding-left:20px;">
+        <font color="red"><h2>@ViewBag.message</h2></font>
+    </div>
+}
+
+
+
+

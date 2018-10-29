@@ -16,18 +16,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @* This a razer language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
-                   Specifically "Homework 4" will be the text displayed as a navbar option, "Index" is the name of a controller function,
+
+                @* This a Razor language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
+                   Specifically, the first parameter "Homework 4" will be the text displayed as a navbar option, the second parameter "Index" is the name of the controller function to be used,
                    and "Home" is the name of the folder that contains the Views specified by the Index.cshtml file and Converter.cshtml files*@
                 @Html.ActionLink("Homework 4", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    @* This a razer language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
-                       Specifically "Converter" will be the text displayed as a navbar option, "Converter" is the name of a controller function,
+                    @* This a Razor language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
+                       Specifically, the first parameter "Converter" will be the text displayed as a navbar option, the second parameter "Converter" is the name of the controller function to be used,
                        and "Home" is the name of the folder that contains the Views specified by the Index.cshtml and Converter.cshtml files.*@
                     <li>@Html.ActionLink("Converter", "Converter", "Home")</li>
+
+                    @* This is a Razor language Html.ActionLink. The first parameter "Color Chooser" specifies the text of the navbar option,
+                       the second specifies the controller function to be used i.e. ColorChooser(), and the third, the folder which contains the Views.*@
+                    <li>@Html.ActionLink("Color Chooser", "ColorChooser", "Color")</li>
+
+
 
                 </ul>
             </div>
@@ -37,8 +44,8 @@
         @RenderBody()
         <hr />
         <footer>
-            
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            @*This was changed to have my name*@
+            <p>&copy; @DateTime.Now.Year - Khorben Boyer</p>
         </footer>
     </div>
 
