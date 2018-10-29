@@ -1,0 +1,75 @@
+﻿@* This file specifies the View for the Converter webpage for taking in user specified mile distances and with the selection of a
+    unit to convert to, gives the equivalent in the those units.
+   Note that the form elements for taking in user input use HTML with no use of Razor HTML helpers.*@
+
+@{
+    ViewBag.Title = "Convert Miles to Metric"; // This specifies the title for the Converter webpage.
+}
+<h2>@ViewBag.Title</h2> @*This displays the title to the user.*@
+
+
+<b>Miles</b> @*This displays the name of the input text box.*@
+
+@*This code block below establishes the structure and content of the forms for user inputs both text and radio button selection.*@
+<div class="row">
+
+    <form action="">
+
+        @*This specifies the text box for the user to input a distance in miles. Note specification of input type and input validiation.*@
+        <div class="col-md-6 form-group">
+
+            <input type="number" style="border-radius: 7px; width: 300px; height: 35px" class="layout-form" id="input" step=".01" name="mile" placeholder="Type the distance" required="required" />
+
+        </div>
+
+        @*This specifies the radio button options for the alternative units that a user can select for the mile distance to be converted into.
+            Note that html is configured to have a radio button as a default option unless otherwise specified by the user.*@
+        <div class="col-md-6 form-group" style="margin-top: -50px">
+
+            <h3>Select a unit</h3>
+            <hr style="margin-top: -8px">
+
+            @* Option for distance in millimeters*@
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="mm" value="millimeters" checked />
+                <label class="form-check-label" for="ul">Millimeters</label>
+            </div>
+
+            @* Option for distance in centimeters*@
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="cm" value="centimeters" />
+                <label class="form-check-label" for="ul">Centimeters</label>
+            </div>
+
+            @* Option for distance in meters*@
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="m" value="meters" />
+                <label class="form-check-label" for="ul">Meters</label>
+            </div>
+
+            @*Option for distance in kilometers*@
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="metric-unit" id="km" value="kilometers" />
+                <label class="form-check-label" for="ul">Kilometers</label>
+            </div>
+
+            <br />
+        </div>
+
+        @* This specifies the button for the user to click to get the conversion result.*@
+        <button style="margin:auto;display:block" align="center" class="btn btn-primary" type="submit">Convert</button>
+
+    </form>
+
+    @*This evaluates the value of checkMeasure in Viewbag to ensure valid information was submitted by the user*@
+   
+    @if (ViewBag.checkMeasure == true && ViewBag.checkUnit == true)
+    {
+         <h3 style="color:darkred"><b> @ViewBag.Message</b></h3> @*This gives the converted result if input was valid.*@
+    }
+    else
+    {
+         <h3 style="color:red"><b> @ViewBag.Message</b></h3> @* This gives an error message to the user *@
+    }
+   
+</div>
