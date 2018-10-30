@@ -202,7 +202,7 @@ And a picture of the the color chooser feature pre-merge on the landing page.
 
 And finally a picture of the fully merged and completed web app landing page.
 
-![Web](./Images/csharp_progam_behavior.PNG)
+![Web](./Images/landing2.PNG)
 
 Furthermore, the converter feature can be seen here.
 
