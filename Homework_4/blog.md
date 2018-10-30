@@ -8,7 +8,7 @@ For the fourth homework, we had to learn the basics of the ASP.NET MVC 5 platfor
 2. [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW4_1819.html)
 3. [Code Repository](https://github.com/No-one-alone/no-one-alone.github.io)
 4. [Final Video Demo](https://www.youtube.com/watch?v=vVG3dyfr420&feature=youtu.be)
-
+5. [demo](./Homework_4/Homework_4/Views/Home/Index.cshtml)
 
 ### Part 1: Attack of the Git
 
