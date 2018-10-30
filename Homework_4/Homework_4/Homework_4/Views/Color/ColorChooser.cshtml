@@ -27,7 +27,7 @@
     @*This creates the input text box for the first color. It usees pattern matching with Regular expressions along with more Razor HTML Helpers*@
     <div class="form-group">
         @Html.Label("first_color", "First Color")
-        @Html.TextBox("first_color", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#AABBCC", required = "required" })
+        @Html.TextBox("firstColor", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#AABBCC", required = "required" })
 
     </div>
 
@@ -35,7 +35,7 @@
     <div class="form-group">
 
         @Html.Label("second_color", "Second Color")
-        @Html.TextBox("second_color", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#DDEEFF", required = "required" })
+        @Html.TextBox("secondColor", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#DDEEFF", required = "required" })
 
     </div>
 

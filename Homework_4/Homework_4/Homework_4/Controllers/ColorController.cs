@@ -46,13 +46,15 @@ namespace Homework_4.Controllers
         [HttpPost]
         public ActionResult ColorChooser(String firstColor, string secondColor)
         {
+            // Commented code no longer needed! fixed parameter binding so that it works now!
+
             // Extracts the Hexadecimal color code in the first input from the query string
-            firstColor = Request.Form["first_color"];
+            //firstColor = Request.Form["first_color"];
 
             // Extracts the Hexadecimal color code in the second input from the query string
-            secondColor = Request.Form["second_color"];
+           // secondColor = Request.Form["second_color"];
 
-            // This is test/debug code.
+            // This is left over test/debug code.
            // FirstColor = FirstColor.Remove(1, 1);
            // FirstColor = FirstColor + 'G';
 
@@ -108,6 +110,7 @@ namespace Homework_4.Controllers
                 
             }
 
+           
             return View(); // This returns the View.
         }
     }
