@@ -25,7 +25,7 @@ First, as per a proper merge protocol, the master branch was first merged into t
 
 ![Web](./Images/merge_1.PNG)
 
-After dealing with any resultant merge conflicts with appropriate code edits along with adding and committing, the hw4_mile_converter branch was then merged into the master branch. Unfortunately, this resulted in a "Fast-forward" merge where instead of maintaining branches as separate via creation of a new commit object, a single branch with all commits was instead produced with master which does not allow us to maintain a history of the feature branch unlike in the non fast-forward merge. The difference between these types of merges can be seen this diagram.
+After dealing with any resultant merge conflicts with appropriate code edits along with adding and committing, the hw4_mile_converter branch was then merged into the master branch. Unfortunately, this resulted in a "Fast-forward" merge where instead of maintaining branches as separate via creation of a new commit object, a single branch with all commits was instead produced with master which does not allow us to maintain a history of the feature branch unlike in the non fast-forward merge. The difference between these types of merges can be seen in this diagram.
 
 ![Web](./Images/ff_vs_noff.PNG)
 
@@ -50,17 +50,17 @@ The second merge was then re-attempted on master using the altered merge command
 git merge --no-ff hw4_mile_converter -m "message"
 ```
 
-This prevented the same situation from developing and gave us the kind of merge seen in previous homeworks. As to why this occurred in the first place with the second merge, the reason follows from the fact that since master had already been merged into the hw4_mile_converter branch to begin with, the merge opeation proceeded to treat them as all part of the same branch due to the resultant similarity.
+This prevented the same situation from developing and gave us the kind of merge seen in previous homeworks. As to why this occurred in the first place with the second merge, the reason follows from the fact that since master had already been merged into the hw4_mile_converter branch to begin with, the merge operation proceeded to treat them as all part of the same branch due to the resultant similarity.
 
 Now back on track with one feature branch fully merged into master as seen here.
 
 ![Web](./Images/merge_2.PNG)
 
-We then proceeded to do the same operation with the second feature branch, hw4_color_branch, in terms of first merging master into the branch, resolving the merge conflicts one by one, along with adding and commiting them.
+We then proceeded to do the same operation with the second feature branch, hw4_color_branch, in terms of first merging master into the branch, resolving the merge conflicts one by one, and adding along with commiting them.
 
 ![Web](./Images/merge_3.PNG)
 
-Next, we completed the last merge of the second feature branch into master via the same non fast-forwad merge command while on master.
+Next, we completed the last merge of the second feature branch into master via the same non fast-forward merge command while on master.
 
 ![Web](./Images/merge_4.PNG)
 
@@ -110,7 +110,7 @@ Followed by choosing the MVC project template seen below.
 
 ![Web](./Images/create_2.PNG)
 
-Visual Studio then automatically set everything up in the project including a preexisting landing page for us to work with which was repurposed with our features see below.
+Visual Studio then automatically set everything up in the project including a preexisting landing page for us to work with which was repurposed with our features as seen below.
 
 ### Part 3: Editing the MVC 5 project and adding features.
 
@@ -126,9 +126,9 @@ ColorController.cs
 
 ```
 
-We will proceed to cover the use of the files in the project.
+We will proceed to cover the use of these files in the project.
 
-### Part 3.1: Landing page ⟶ _Layout.cshmtl component
+### Part 3.1: Landing page ⟶ _Layout.cshtml component
 
 This file was already present from the project setup and had only a few key changes and additions made to it.
 
@@ -202,7 +202,7 @@ Specifically, these were changed to have the appropriate title and name respecti
 ...
 
 ```
-Also, these Razor language HTML ActionLink helpers were added.
+Also, these Razor language HTML ActionLink helpers were added in place of the more usual "href=" html attributes.
 
 ```html
 ...
@@ -392,7 +392,7 @@ As for user input functionality, the specific components include the text input 
 
 ```
 
-Note the present of the "required" and "checked" attributes which serve as client side enforcement of validation for user input. Also the "label class" element's purpose will become clear as we examine the related controller for the Converter.
+Note the present of the "required" and "checked" attributes which serve as client side enforcement of validation for user input. Also the "name" and "value" attributes and their purpose will become clear as we examine the related controller for the Converter.
 
 
 
@@ -500,7 +500,7 @@ namespace Homework_4.Controllers
 
 ```
 
-We note that a controller function has the standard signature "public ActionResult ControllerName()" where in this case the user inputs (mile distance, unit selected) are sent to the server via query string and must be extracted from within the controller function via accessing the "Request" object as seen here
+We note that a controller function has the standard signature "public ActionResult ControllerName()" where in this case the user inputs (mile distance, unit selected) are sent to the server via query string and must be extracted from within the controller function via accessing the "Request" object as seen here.
 
 ```html
 ...
@@ -509,6 +509,7 @@ ViewBag.checkMeasure = Double.TryParse(Request.QueryString["mile"], out miles);
 string unit = Request.QueryString["metric-unit"];
 
 ```
+As can be observed, the "mile" and "metric-unit" attributes are used to extract the related values that were specified by the user.
 
 Note this controller uses a GET request type.
 
@@ -612,7 +613,7 @@ Here, we note the use of some new Razor HTML helpers for creating the forms such
  @Html.TextBox("firstColor", null, htmlAttributes: new { @class = "form-control", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", type = "text", placeholder = "#AABBCC", required = "required" })
 ...
 ```
-The @HTML.Label generates a html "label" element with the second parameter giving the text seen by the user. As for @Html.TextBox, it creates an (input type="text") element with specified name, value and html attributes. Note the use of the html pattern attribute wher a Regular Expresion is used to match against the user input and provides along with the "required" attribute some client side user input validation. The breakdown of the Regular Expression used here can be seen below.
+The @HTML.Label generates a html "label" element with the second parameter giving the text seen by the user. As for @Html.TextBox, it creates an (input type="text") element with specified name, value and html attributes. Note the use of the html pattern attribute where a Regular Expresion is used to match against the user input and provides along with the "required" attribute some client side user input validation. The breakdown of the Regular Expression used here can be seen below.
 
 ```cs
     @* This is the breakdown of the Hexadecimal Color Code Regular Expression Pattern used below: "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
@@ -627,7 +628,7 @@ The @HTML.Label generates a html "label" element with the second parameter givin
         $		 #end of the line
     *@
 ```
-Note that the above is all contianed within the following.
+Note that the above is all contained within the following.
 
 ```html
 

@@ -66,9 +66,9 @@ namespace Homework_4.Controllers
             // if user input was invalid, then an error message is prepared for the user instead.
             if (firstColor != null && secondColor != null && Regex.IsMatch(firstColor, "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$") && Regex.IsMatch(secondColor, "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"))
             {
-                // this debugging code
-                Debug.WriteLine(firstColor);
-                Debug.WriteLine(secondColor);
+                // this is debugging code
+             //   Debug.WriteLine(firstColor);
+             //   Debug.WriteLine(secondColor);
 
                 // These are variables to store the components that make up the ARGB structure.
                 int alphaComponent, redComponent, greenComponent, blueComponent;

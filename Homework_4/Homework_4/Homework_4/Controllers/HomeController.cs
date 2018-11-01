@@ -51,8 +51,8 @@ namespace Homework_4.Controllers
             string unit = Request.QueryString["metric-unit"];
 
             // These can be used to debug the obtained user inputs.
-            Debug.WriteLine(miles);
-            Debug.WriteLine(unit);
+          //  Debug.WriteLine(miles);
+          //  Debug.WriteLine(unit);
 
             // This is used to hold the conversion result.
             double calcedConversion = -1;
