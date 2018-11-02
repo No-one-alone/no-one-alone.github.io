@@ -110,7 +110,17 @@ Followed by choosing the MVC project template seen below.
 
 ![Web](./Images/create_2.PNG)
 
-Visual Studio then automatically set everything up in the project including a preexisting landing page for us to work with which was repurposed with our features as seen below.
+Visual Studio then automatically set everything up in the project including a preexisting landing page for us to work with which was repurposed with our features as seen below in the "Final Results" section of this blog.
+
+One issue that arose after Homework #4 had been effectively finished involved a final validation of the project via cloning to a different non-git initialized directory which resulted in failure after rebuilding the project and starting up the web app.
+
+This problem was solved by the using the NuGet Package Manager seen accessed here.
+
+![Web](./Images/NuGet.PNG)
+
+And then browsing for compilers followed by selecting and installing the Microsoft.Net.Compilers package seen below.
+
+![Web](./Images/Package.PNG)
 
 ### Part 3: Editing the MVC 5 project and adding features.
 
@@ -153,21 +163,21 @@ This file was already present from the project setup and had only a few key chan
                     <span class="icon-bar"></span>
                 </button>
 
-                @* This a Razor language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
-                   Specifically, the first parameter "Homework 4" will be the text displayed as a navbar option, the second parameter "Index" is the name of the controller function to be used,
-                   and "Home" is the name of the folder that contains the Views specified by the Index.cshtml file and Converter.cshtml files*@
+                @* This a Razor language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link.
+                Specifically, the first parameter "Homework 4" will be the text displayed as a navbar option link, the second parameter "Index" 
+                is the name of the controller ActionResult function to be used, and "Home" is the name of the controller file to be used*@
                 @Html.ActionLink("Homework 4", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
                     @* This a Razor language Hmtl.ActionLink which returns an anchor element to modify HTML Output via rendering an HTML link
-                       Specifically, the first parameter "Converter" will be the text displayed as a navbar option, the second parameter "Converter" is the name of the controller function to be used,
-                       and "Home" is the name of the folder that contains the Views specified by the Index.cshtml and Converter.cshtml files.*@
+                       Specifically, the first parameter "Converter" will be the text displayed as a navbar option link, the second parameter "Converter"
+                        is the name of the controller ActionResult function to be used, and "Home" is the name of the controller file to be used for the mile converter*@
                     <li>@Html.ActionLink("Converter", "Converter", "Home")</li>
 
-                    @* This is a Razor language Html.ActionLink. The first parameter "Color Chooser" specifies the text of the navbar option,
-                       the second specifies the controller function to be used i.e. ColorChooser(), and the third, the folder which contains the Views.*@
+                    @* This is a Razor language Html.ActionLink. The first parameter "Color Chooser" specifies the text of the navbar option link,
+                       the second specifies the controller ActionResult function to be used i.e. ColorChooser(), and the third, the name of the controller file to be used for the color chooser *@
                     <li>@Html.ActionLink("Color Chooser", "ColorChooser", "Color")</li>
 
                 </ul>
@@ -213,7 +223,7 @@ Also, these Razor language HTML ActionLink helpers were added in place of the mo
 @Html.ActionLink("Color Chooser", "ColorChooser", "Color")
 ...
 ```
-The first parameter of these helpers consists of the text to be displayed, the second parameter specifies the name of a suitable controller function, and the third parameter specifies the folder with the appropriate Views.
+The first parameter of these helpers consists of the text to be displayed for the link, the second parameter specifies the name of a suitable controller ActionResult function, and the third parameter specifies the specific Controller file needed.
 
 ### Part 3.2 Landing page ⟶ Index.cshtml
 
@@ -253,8 +263,7 @@ This file was also already present after the initial project setup.
         </p>
 
         @*This specifies the button that links and takes the user to the Converter page via a Razor Html.ActionLink()
-           The first parameter gives the name of the button, the second gives the name of a controller function,
-            and the third, the name of the folder that contains the file with the appropriate View.*@
+           The first parameter gives the name of the button, the second gives the name of a controller ActionResult function,and the third, the name of the controller file for the mile converter.*@
         <p><a class="btn btn-primary" @Html.ActionLink("Try it!", "Converter", "Home")</a></p> 
 
     </div>
@@ -271,7 +280,7 @@ This file was also already present after the initial project setup.
 
         @* This is the button for the user to click. 
            It is a Razor Html.ActionLink where the first paramenter specifies the text of the button, the second is
-            the name of the relevant controller function i.e ColorChooser(), and the third is the name of the folder that contians the Views.*@
+            the name of the relevant controller ActionResult function i.e ColorChooser(), and the third is the name of the controller file for the color chooser*@
         <p><a class="btn btn-primary" @Html.ActionLink("Check it out!", "ColorChooser", "Color")</a></p> 
     <div>
 
@@ -803,7 +812,11 @@ The above works in combination with these HTML helpers from earlier which supply
 ```
 This is necessary as this controller uses a Http POST request to the server which does not append the input parameter data supplied by the user into the URL string but instead carries it in a request message body which is meant to be more secure unlike the more accesible URL string.
 
-On another note, one should notice of the following.
+```cs
+[HttpPost]
+```
+
+On another note, one should notice the following.
 
 ```cs
 using System.Diagnostics; // Used for debugging
