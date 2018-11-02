@@ -110,7 +110,9 @@ Followed by choosing the MVC project template seen below.
 
 ![Web](./Images/create_2.PNG)
 
-Visual Studio then automatically set everything up in the project including a preexisting landing page for us to work with which was repurposed with our features as seen below in the "Final Results" section of this blog.
+Visual Studio then automatically set everything up in the project including the preexisting landing page seen here for us to work with which was repurposed with our features as seen below in the "Final Results" section of this blog.
+
+![Web](./Images/initial_landing.PNG)
 
 One issue that arose after Homework #4 had been effectively finished involved a final validation of the project via cloning to a different non-git initialized directory which resulted in failure after rebuilding the project and starting up the web app.
 
