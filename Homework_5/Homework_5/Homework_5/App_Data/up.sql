@@ -23,4 +23,4 @@ INSERT INTO [dbo].[Users] (FirstName, LastName, PhoneNumber, ApartmentName, Unit
 	
 GO
 
---SELECT * FROM dbo.Users
+SELECT * FROM dbo.Users

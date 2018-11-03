@@ -160,6 +160,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\OurRenters.mdf" />
     <Content Include="App_Data\OurRenters_log.ldf">
       <DependentUpon>OurRenters.mdf</DependentUpon>
