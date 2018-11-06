@@ -11,7 +11,7 @@ namespace Homework_5.Models
     public class Request
     {
         [Key]
-        public int ID { get; set }
+        public int ID { get; set; }
 
         [Required]
         [StringLength(20)]
