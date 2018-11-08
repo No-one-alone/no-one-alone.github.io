@@ -47,9 +47,10 @@ namespace Homework_5.Controllers
         {
             if (ModelState.IsValid)
             {
+                request.DateTimeOfRequest = DateTime.Now;
                 database.Requests.Add(request);
                 database.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Listing");
             }
 
             return View(request);
