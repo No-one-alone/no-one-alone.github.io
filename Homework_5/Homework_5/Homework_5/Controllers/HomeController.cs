@@ -16,13 +16,24 @@ namespace Homework_5.Controllers
 
         private RequestContext database = new RequestContext();
 
-        // GET: Requests
+        [HttpGet]
         public ActionResult Index()
+        {
+            ViewBag.Message = "Your home page.";
+
+            return View();
+        }
+
+        // GET: Requests
+        //public ActionResult Index()
+        [HttpGet]
+        public ActionResult Listing()
         {
             return View(database.Requests.ToList());
         }
 
         //GET: Requests/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -44,15 +55,6 @@ namespace Homework_5.Controllers
 
             return View(request);
         }
-
-
-
-
-
-
-
-
-
 
 
 
