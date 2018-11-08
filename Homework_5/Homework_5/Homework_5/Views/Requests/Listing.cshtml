@@ -1,7 +1,89 @@
 ﻿
+@model IEnumerable<Homework_5.Models.Request>
+
 @{
     ViewBag.Title = "Listing";
 }
 
-<h2>Listing</h2>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ApartmentName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.UnitNumber)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.RequestExplanation)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Permission)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeOfRequest)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ApartmentName)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitNumber)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestExplanation)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Permission)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeOfRequest)
+        </td>
+
+
+
+    </tr>
+    }
+
+</table>
 
