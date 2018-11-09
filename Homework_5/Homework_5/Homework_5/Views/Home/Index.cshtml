@@ -16,21 +16,21 @@
 
     <div class="row">
 
-        @*This contains a description the button that links to the make a request page.*@
+        @*This contains a description of the button that links to the "make a request" page.*@
         <div class="col-md-6">
             <h2>Need to make a Request?</h2>
             <p>
                 Have a problem or a complaint? Look no further! Simply click on the button below to get to the page for making requests.
             </p>
 
-            @*This specifies the button that links and takes the user to the make a request page via a Razor Html.ActionLink()
-                The first parameter gives the name of the button, the second gives the name of a controller function,
+            @*This specifies the button that links and takes the user to the "make a request" page via a Razor Html.ActionLink()
+                The first parameter gives the name of the button, the second gives the name of a controller function i.e. Create(),
                  and the third, the name of the folder that contains the file with the appropriate View.*@
             <p><a class="btn btn-primary" @Html.ActionLink("Make a Request", "Create", "Requests") </a></p>
 
         </div>
 
-        @* This describes the option to see all previously enteredd requests.*@
+        @* This describes the option to see all previously entered requests.*@
         <div class="col-md-6">
             <h2>See Known Requests</h2>
             <p>
@@ -40,7 +40,7 @@
 
             @* This is the button for the user to click.
                 It is a Razor Html.ActionLink where the first paramenter specifies the text of the button, the second is
-                 the name of the relevant controller function i.e ColorChooser(), and the third is the name of the folder that contains the Views.*@
+                 the name of the relevant controller function i.e Listing(), and the third is the name of the folder that contains the Views.*@
             <p><a class="btn btn-primary" @Html.ActionLink("View Requests", "Listing", "Requests") </a></p>
         </div>
 

@@ -1,4 +1,6 @@
-﻿
+﻿@* this file contains our strong typed view for the "View Request" webpage.*@
+
+@*This defines our strongly typed view and specifies that it is of enumerable type.*@
 @model IEnumerable<Homework_5.Models.Request>
 
 @{
@@ -7,13 +9,15 @@
 
 <h2>Requests</h2>
 
+@*This a link to take the user back to the "Make a Request" web page*@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
 
     
-
+        @*This specifies the headers for the columns of the table list to be created for being viewed by the user.*@
+        @*Note that all of the database data fields are present.*@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
@@ -49,7 +53,7 @@
         </tr>
 
    
-
+    @*This iterates through the database object and displayes each database entry with all its data fields as a row in the table listing.*@
     @foreach (var item in Model)
     {
     <tr>
