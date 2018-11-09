@@ -1,0 +1,134 @@
+﻿@* This file contains our strongly typed view for the "Make a Request" webpage.*@
+
+@*This establishes our strongly typed view.*@
+@model Homework_5.Models.Request
+
+@{
+    ViewBag.Title = "Request Submission";
+}
+
+<h2>Campus Apartments</h2>
+
+@* This is a Razor HTML helper for making forms.*@
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken() 
+
+
+@*The HTML elements below define our form elements for the page.*@
+<div class="form-horizontal">
+    <h4>Tennant Request Form</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @*This creates the textbox for the first name to be entered by the user.*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*This creates the textbox for the last name to be entered by the user.*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*This creates the textbox for the phone number to be entered by the user.*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    @*Consulted Dominic on how to do a drop down list*@
+    @*This creates a dropdown list for the user to select a valid apartment from.*@
+    <div class="form-group" style="padding-left:20px">
+         @Html.LabelFor(model => model.ApartmentName, htmlAttributes: new { @class = "control-label col-md-2" }) 
+
+        
+         @Html.DropDownListFor(model => Model.ApartmentName, new List<SelectListItem>
+         {
+            new SelectListItem{ Text="Legacy Oaks", Value = "Legacy Oaks" },
+            new SelectListItem{ Text="Riverplace", Value = "Riverplace" },
+            new SelectListItem{ Text="Riverside Condos", Value = "Riverside Condos" },
+            new SelectListItem{ Text="Great Expectations", Value = "Great Expectations" },
+            new SelectListItem{ Text="Ridgeline", Value = "Ridgeline" },
+            new SelectListItem{ Text="Heritage Hall", Value = "Heritage Hall" },
+            new SelectListItem{ Text="Ackerman Hall", Value = "Ackerman Hall" },
+            new SelectListItem{ Text="Landers Hall", Value = "Landers Hall" },
+         }, new { @class="form-control"})
+
+           
+        <div class="col-md-10">
+          @*  @Html.EditorFor(model => model.ApartmentName, new { htmlAttributes = new { @class = "form-control" } }) *@
+            @Html.ValidationMessageFor(model => model.ApartmentName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    @*This creates a textbox for the unit number to be entered by the user.*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.UnitNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UnitNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UnitNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    @*This creates a text area box for the explanation of request to be entered by the user.*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.RequestExplanation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.RequestExplanation, htmlAttributes: new { @class = "form-control", @rows = 10, @placeholder = "Explanation of request, maintenance required, or complaint. Please be specific." })
+            @Html.ValidationMessageFor(model => model.RequestExplanation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    @*This creates a checkbox for whether permission is to be given by the user.*@
+    <div class="form-group">
+        @Html.Label("Select here to give permission for the requested maintenance", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:darkred; font-size: 15px; top: -8px;" })
+
+        <div class="col-md-10">
+           
+            @Html.CheckBoxFor(model => model.Permission)
+
+        </div>
+
+    </div>
+
+
+
+    @* This creates the button for submitting the form.*@
+    <div class="form-group">
+        <div class="col-md-4">
+            <input id="btnSubmitForm" name="submit" class="btn btn-primary submitted" type="submit" value="Submit the Request" />
+
+        </div>
+    </div>
+
+</div>
+}
+
+@*This action link takes the user back to the "View Requests" web page.*@
+<div>
+    @Html.ActionLink("Back to List", "Listing")
+</div>
+
+@*
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+*@
