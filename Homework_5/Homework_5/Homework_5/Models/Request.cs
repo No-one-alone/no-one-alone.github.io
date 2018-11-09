@@ -41,9 +41,6 @@ namespace Homework_5.Models
         [Required]
         public DateTime DateTimeOfRequest { get; set; }
 
-        //gets current time from system for database
-        //private DateTime date = DateTime.Now;
-
         public override string ToString()
         {
             return $"{base.ToString()}: {FirstName} {LastName} {PhoneNumber} {ApartmentName} {UnitNumber} {RequestExplanation} {Permission} {DateTimeOfRequest}";

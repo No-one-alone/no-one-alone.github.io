@@ -1,31 +1,47 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@*This file describes some of the form as well as the text content of the landing page and the page option descriptions.*@
+
+@{
+    ViewBag.Title = "Home Page"; // Title of the homepage.
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@*This contains the message displayed to a user for the introduction component of the web page.*@
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+    <div class="jumbotron">
+        <h1>Apex Campus Apartments Maintenance</h1>
+        <p class="lead">
+            Welcome to the maintenance page for your campus apartments.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="row">
+
+        @*This contains a description the button that links to the make a request page.*@
+        <div class="col-md-6">
+            <h2>Need to make a Request?</h2>
+            <p>
+                Have a problem or a complaint? Look no further! Simply click on the button below to get to the page for making requests.
+            </p>
+
+            @*This specifies the button that links and takes the user to the make a request page via a Razor Html.ActionLink()
+                The first parameter gives the name of the button, the second gives the name of a controller function,
+                 and the third, the name of the folder that contains the file with the appropriate View.*@
+            <p><a class="btn btn-primary" @Html.ActionLink("Make a Request", "Create", "Requests") </a></p>
+
+        </div>
+
+        @* This describes the option to see all previously enteredd requests.*@
+        <div class="col-md-6">
+            <h2>See Known Requests</h2>
+            <p>
+                Need to see how far down the list you are? Then click on the button below to see how you fair.
+
+            </p>
+
+            @* This is the button for the user to click.
+                It is a Razor Html.ActionLink where the first paramenter specifies the text of the button, the second is
+                 the name of the relevant controller function i.e ColorChooser(), and the third is the name of the folder that contains the Views.*@
+            <p><a class="btn btn-primary" @Html.ActionLink("View Requests", "Listing", "Requests") </a></p>
+        </div>
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>

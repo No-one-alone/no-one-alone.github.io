@@ -19,7 +19,7 @@ namespace Homework_5.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Your home page.";
-
+            
             return View();
         }
 
@@ -28,7 +28,9 @@ namespace Homework_5.Controllers
         [HttpGet]
         public ActionResult Listing()
         {
-            return View(database.Requests.ToList());
+            List<Request> list = database.Requests.ToList();
+            var sortedList = list.OrderBy(time => time.DateTimeOfRequest);
+            return View(sortedList);
         }
 
         //GET: Requests/Create
@@ -55,26 +57,5 @@ namespace Homework_5.Controllers
 
             return View(request);
         }
-
-
-
-
-
-        /*
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        */
-
     }
 }
