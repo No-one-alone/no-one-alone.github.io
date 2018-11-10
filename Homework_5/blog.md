@@ -8,6 +8,7 @@ For this week, our homework involved building a database-backed web application 
 2. [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW5_1819.html)
 3. [Code Repository](https://github.com/No-one-alone/no-one-alone.github.io)
 4. [Final Video Demo](https://www.youtube.com/watch?v=bAsLXYbIFYY)
+5. [Server-Side validation using Postman](https://www.youtube.com/watch?v=8WHSrMvnnqY)
 
 
 ### Part 1: Creation of ASP.NET MVC 5 web app with Visual Studio IDE
