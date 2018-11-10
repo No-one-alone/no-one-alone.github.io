@@ -7,7 +7,7 @@ For this week, our homework involved building a database-backed web application 
 1. [Home page](https://no-one-alone.github.io/)
 2. [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW5_1819.html)
 3. [Code Repository](https://github.com/No-one-alone/no-one-alone.github.io)
-4. [Final Video Demo](https://www.youtube.com/watch?v=vAOAaKrlr_k)
+4. [Final Video Demo](https://www.youtube.com/watch?v=bAsLXYbIFYY)
 
 
 ### Part 1: Creation of ASP.NET MVC 5 web app with Visual Studio IDE
@@ -260,7 +260,7 @@ ErrorMessage = "Must have format: ###-###-####")]
 
 ```
 
-Which provides validation for the formatting of the phone number via regular expression based matching.
+Which provides validation for the formatting of the phone number via regular expression based pattern matching.
 
 
 
@@ -523,40 +523,65 @@ As in the last assignment, we see the familar razor language HTML helpers from b
 
   @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 ...
-  @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-...
-
-  @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-  @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-...
-
- @Html.DropDownListFor(model => Model.ApartmentName, new List<SelectListItem>
-         {
-            ...
-         }, new { @class="form-control"})
-...
-
- @Html.TextAreaFor(model => model.RequestExplanation, htmlAttributes: new { @class = "form-control", @rows = 10, @placeholder = "Explanation of request, maintenance required, or complaint. Please be specific." })
-
-...
-
-@Html.Label("Select here to give permission for the requested maintenance", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:darkred; font-size: 15px; top: -8px;" })
-
 
 ```
 The ValidationSummary helper method seen above generates an unordered list (ul element) of validation messages that are in the ModelStateDictionary object.
 
 Furthermore, the ValidationSummary can be used to display all the error messages for all the fields. It can also be used to display custom error messages. 
 
+
+```cs
+...
+  @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+...
+```
+
 The LabelFor helper method, on the other hand, is a strongly typed extension method. It generates a html label element for the model object property specified using a lambda expression as seen above.
+
+```cs
+...
+  @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+...
+```
 
 Next, the EditorFor helper extension method generates html elements based on the data type of the model object's property as above.
 
+
+```cs
+...
+  @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+...
+
+```
+
 Then, we have the ValidateMessageFor helper which is another strongly typed extension method for displaying a validation message if an error exists for the specified field in the ModelStateDictionary object.
+
+
+```cs
+...
+ @Html.DropDownListFor(model => Model.ApartmentName, new List<SelectListItem>
+ {
+    ...
+ }, new { @class="form-control"})
+...
+
+```
 
 The DropDownListFor helper method is yet another strongly typed extension method. It generates a 'select' element for the property specified using a lambda expression. 
 
+```cs
+...
+ @Html.TextAreaFor(model => model.RequestExplanation, htmlAttributes: new { @class = "form-control", @rows = 10, @placeholder = "Explanation of request, maintenance required, or complaint. Please be specific." })
+...
+```
 The TextAreaFor helper method is, no surprise here, a strongly typed extension method. It generates a multi line 'textarea' element for the property in the model object specified using a lambda expression.
+
+
+```cs
+...
+@Html.Label("Select here to give permission for the requested maintenance", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:darkred; font-size: 15px; top: -8px;" })
+...
+```
 
 Finally, we have the Label helper which generates a 'label' element for a specified property of the model object.
 
@@ -683,14 +708,14 @@ This new added file was responsible for generating the webpage for the "View req
 </table>
 
 
-'''
+```
 
 The new Razor helpers here consist of
 
 ```cs
-
+...
  @Html.DisplayNameFor(model => model.FirstName)
-
+...
 ```
 
 And
@@ -709,13 +734,13 @@ And
 
 The DisplayNameFor helper returns the display name for the specified expression for the current model as a collection.
 
-This how the headers of the columns in the table were placed.
+This how the headers of the columns in the table were obtained.
 
-While the Displayfor displays the actual value of the specified expression in a consistent manner thus giving us the data found in the fields of the table.
+While the Displayfor displays the actual value of the specified expression in a consistent manner thus giving us the data found in each of the fields of the table.
 
-Note that the latter helper is wrapped in the foreach loop above which allows to iterate through each of entries in the model and thus display each of the request entries in the database.
+Note that the latter helper is wrapped in the foreach loop above which allows for iterating through each of entries in the model and thus displaying each of the request entries in the database.
 
-Lastly as in the other view, we see the creation of strong typed view with the enumberable characteristic enabled by this code.
+Lastly as in the other view, we see the creation of a strongly typed view with the enumerable characteristic enabled by this code.
 
 ```cs
 
@@ -849,6 +874,11 @@ public ActionResult Listing()
 
 ...
 
+```
+And
+
+```cs
+...
 [HttpPost]
 //[ValidateAntiForgeryToken]
  public ActionResult Create([Bind(Include = "FirstName, LastName, PhoneNumber, ApartmentName, UnitNumber, RequestExplanation, Permission, DateTimeOfRequest")] Request request)
@@ -868,7 +898,7 @@ public ActionResult Listing()
      return View(request);
 }
 
-
+...
 ```
 
 The Listing() controller function is responsible for converting the database object to a list object and sorting the entries in the resultant list in older-first fashion followed by displaying them to the user in the "View Requests" webpage in list table format.
