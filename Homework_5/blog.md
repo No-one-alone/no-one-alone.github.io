@@ -48,6 +48,15 @@ After creating the up.sql file described in the next part and executing it, we t
 
 ![Web](./Images/server_explorer.PNG)
 
+Furthermore, we were also required to install the Microsoft Entity Framework to support working with databases.
+
+This required using the "Manage NuGet Packages for Solution" tool.
+
+![Web](./Images/nuget_entity.PNG)
+
+And then installing the Entity Framework in the homework 5 project.
+
+![Web](./Images/nuget_entity_install.PNG)
 
 
 ### Part 2.2: Database table creation ⟶ up.sql and down.sql components
