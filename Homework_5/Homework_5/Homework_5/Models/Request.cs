@@ -79,9 +79,8 @@ namespace Homework_5.Models
         /// This is the property for accessing the unit number field of a database entry.
         /// </summary>
         [Required]
-        [DataType(DataType.Text),
-         RegularExpression(@"^[0-9]*$",
-         ErrorMessage = "Must be a number")]
+        [RegularExpression(@"^[0-9]*$",
+         ErrorMessage = "Must be a positive number")]
         [Display(Name = "Unit Number")]
         public int UnitNumber { get; set; }
 
