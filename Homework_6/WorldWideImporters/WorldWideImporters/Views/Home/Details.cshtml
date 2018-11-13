@@ -1,0 +1,144 @@
+﻿@model WorldWideImporters.Models.Person
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <dl>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferredName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreferredName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaxNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaxNumber)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValidFrom)
+        </dd>
+
+
+    </dl>
+
+    @*
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person1.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreferredName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SearchName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsPermittedToLogon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LogonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsExternalLogonProvider)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HashedPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSystemUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEmployee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSalesperson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserPreferences)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FaxNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomFields)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherLanguages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidTo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonID })
+        </td>
+    </tr>
+}
+
+        *@
+
+</table>
