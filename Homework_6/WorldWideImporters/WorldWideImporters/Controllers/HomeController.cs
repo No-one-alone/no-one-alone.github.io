@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 // added these
 using WorldWideImporters.Models;
-//using WorldWideImporters.ViewModels;
+using WorldWideImporters.Models.ViewModels;
 
 
 namespace WorldWideImporters.Controllers
