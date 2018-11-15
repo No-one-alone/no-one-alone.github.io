@@ -42,6 +42,15 @@ namespace WorldWideImporters.Controllers
             Person vm = database.People.Find(id);
 
             return View("Details", vm);
+
+
+
+
+
+
+
+
+
         }
 
 
@@ -57,7 +66,7 @@ namespace WorldWideImporters.Controllers
 
 
 
-
+        /*
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -71,5 +80,7 @@ namespace WorldWideImporters.Controllers
 
             return View();
         }
+
+        */
     }
 }
