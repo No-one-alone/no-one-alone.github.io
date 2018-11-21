@@ -1,8 +1,25 @@
-﻿@model WorldWideImporters.Models.Person
+﻿@*@model WorldWideImporters.Models.Person *@
+
+@model WorldWideImporters.Models.ViewModels.DisplayModel
 
 @{
     ViewBag.Title = "Details";
 }
+
+
+@section Header
+{
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+}
+
+
 
 <h2>Details</h2>
 
@@ -13,61 +30,61 @@
     <dl>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FullName)
+            @Html.DisplayNameFor(model => model.MyPerson.FullName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FullName)
+            @Html.DisplayFor(model => model.MyPerson.FullName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PreferredName)
+            @Html.DisplayNameFor(model => model.MyPerson.PreferredName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PreferredName)
+            @Html.DisplayFor(model => model.MyPerson.PreferredName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            @Html.DisplayNameFor(model => model.MyPerson.PhoneNumber)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
+            @Html.DisplayFor(model => model.MyPerson.PhoneNumber)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FaxNumber)
+            @Html.DisplayNameFor(model => model.MyPerson.FaxNumber)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FaxNumber)
+            @Html.DisplayFor(model => model.MyPerson.FaxNumber)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
+            @Html.DisplayNameFor(model => model.MyPerson.EmailAddress)
         </dt>
 
 
         <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
+            @Html.DisplayFor(model => model.MyPerson.EmailAddress)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Photo)
+            @Html.DisplayNameFor(model => model.MyPerson.Photo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Photo)
+            @Html.DisplayFor(model => model.MyPerson.Photo)
         </dd>
 
 
         <dt>
-            @Html.DisplayNameFor(model => model.ValidFrom)
+            @Html.DisplayNameFor(model => model.MyPerson.ValidFrom)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ValidFrom)
+            @Html.DisplayFor(model => model.MyPerson.ValidFrom)
         </dd>
 
 
@@ -75,77 +92,270 @@
 
 
 </table>
-    @*
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Person1.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PreferredName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SearchName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsPermittedToLogon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LogonName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsExternalLogonProvider)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HashedPassword)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSystemUser)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsEmployee)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSalesperson)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserPreferences)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FaxNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmailAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomFields)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OtherLanguages)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ValidFrom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ValidTo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PersonID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PersonID })
-        </td>
-    </tr>
+
+
+
+
+@*added this code!!!d*@
+
+
+
+
+
+
+@*Thiss*@
+@if (ViewBag.IsPrimaryContactPerson)
+{
+    <div>
+        <h4>Customer</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MyCustomer.CustomerName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MyCustomer.CustomerName)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MyCustomer.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MyCustomer.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MyCustomer.FaxNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MyCustomer.FaxNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MyCustomer.WebsiteURL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MyCustomer.WebsiteURL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MyCustomer.ValidFrom)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MyCustomer.ValidFrom)
+            </dd>
+
+
+        </dl>
+    </div>
+
+    @*This is t*@
+    <div>
+        <h3>Purchases</h3>
+        <dl>
+            <dt>
+                @Html.Label("order-count", "Orders:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MyCustomer.Orders.Count)
+            </dd>
+
+            <dt>
+                @Html.Label("gross-sales", "Gross Sales: ")
+            </dt>
+
+            <dd>
+                @string.Format("{0:C}", ViewBag.GrossSales)
+            </dd>
+
+
+            <dt>
+                @Html.Label("gross-profit", "Gross Profit: ")
+            </dt>
+
+            <dd>
+                @string.Format("{0:C}", ViewBag.GrossProfit)
+            </dd>
+
+        </dl>
+
+    </div>
+    @*This i*@
+    <div>
+        <h3>Purchased Items</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        @Html.Label("stock-item", "Stock Item")
+                    </th>
+
+                    <th>
+                        @Html.Label("description", "Description")
+                    </th>
+                    <th>
+                        @Html.Label("line-profit", "Profit")
+                    </th>
+                    <th>
+                        @Html.Label("sale-person", "Sales Person")
+                    </th>
+                </tr>
+            </thead>
+
+            @foreach (var product in Model.MyInvoiceLine)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(item => product.StockItemID)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(item => product.Description)
+                        </td>
+
+                        <td>
+                            @string.Format("{0:C}", product.LineProfit)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(item => product.Invoice.Person4.FullName)
+                        </td>
+                    </tr>
+                </tbody>
+
+
+
+
+            }
+
+
+        </table>
+    </div>
+
+
+
+    <div class="col-md-5">
+        <div id="map" style="height: 180px; width: 200px"></div>
+        <script>
+        var long = @Model.MyCustomer.DeliveryLocation.Longitude;
+        var lat = @Model.MyCustomer.DeliveryLocation.Latitude;
+
+
+
+        var map = L.map('map').setView([lat, long ], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([51.5, -0.09]).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+        </script>
+    </div>
+    <div class="col-md-3"></div>
+
+    <p>
+
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+
+
 }
 
-        *@
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person1.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreferredName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPermittedToLogon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsExternalLogonProvider)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HashedPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSystemUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsEmployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSalesperson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPreferences)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaxNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomFields)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherLanguages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidTo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PersonID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PersonID })
+            </td>
+        </tr>
+    }
+
+*@
 
 
