@@ -155,6 +155,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,6 +218,11 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Bids\Create.cshtml" />
+    <Content Include="Views\Bids\Delete.cshtml" />
+    <Content Include="Views\Bids\Details.cshtml" />
+    <Content Include="Views\Bids\Edit.cshtml" />
+    <Content Include="Views\Bids\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
