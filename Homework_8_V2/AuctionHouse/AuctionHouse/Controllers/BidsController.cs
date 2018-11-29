@@ -53,9 +53,13 @@ namespace AuctionHouse.Controllers
         {
             if (ModelState.IsValid)
             {
+                bid.TimeStamp = DateTime.Now;
+
                 db.Bids.Add(bid);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Details", "Items", new { id = bid.ItemID });
+
             }
 
             ViewBag.BuyerID = new SelectList(db.Buyers, "ID", "BuyerName", bid.BuyerID);
