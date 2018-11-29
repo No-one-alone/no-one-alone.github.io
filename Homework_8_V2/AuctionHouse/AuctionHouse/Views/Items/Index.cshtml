@@ -11,33 +11,49 @@
 </p>
 <table class="table">
     <tr>
+
         <th>
-            @Html.DisplayNameFor(model => model.Seller.SellerName)
+            @Html.DisplayNameFor(model => model.ID)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.ItemName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Seller.SellerName)
+        </th>
+
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+
         <td>
-            @Html.DisplayFor(modelItem => item.Seller.SellerName)
+            @Html.DisplayFor(modelItem => item.ID)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.ItemName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
+
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.Seller.SellerName)
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }
