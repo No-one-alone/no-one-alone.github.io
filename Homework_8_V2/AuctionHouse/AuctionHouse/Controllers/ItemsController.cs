@@ -115,6 +115,23 @@ namespace AuctionHouse.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Item item = db.Items.Find(id);
+
+
+            if(item != null)
+            {
+               
+                List<Bid> bids = db.Bids.Where(x => x.ItemID == id).ToList();
+
+                
+                if (bids.Count > 0)
+                {
+                    return RedirectToAction("Index");
+
+                }
+
+            }
+
+
             db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
