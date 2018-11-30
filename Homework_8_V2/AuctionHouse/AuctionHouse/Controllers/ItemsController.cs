@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using AuctionHouse.Models;
 
+//added this
+using AuctionHouse.DAL;
+
 namespace AuctionHouse.Controllers
 {
     public class ItemsController : Controller

@@ -1,9 +1,12 @@
-namespace AuctionHouse.Models
+namespace AuctionHouse.DAL
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+
+    //added
+    using AuctionHouse.Models;
 
     public partial class AuctionHouseContext : DbContext
     {

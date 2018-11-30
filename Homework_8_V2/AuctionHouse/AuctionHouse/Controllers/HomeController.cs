@@ -1,16 +1,27 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+//added this
+using AuctionHouse.DAL;
+
 namespace AuctionHouse.Controllers
 {
     public class HomeController : Controller
     {
+        private AuctionHouseContext database = new AuctionHouseContext();
+
         public ActionResult Index()
         {
-            return View();
+            // return View(database.Bids.OrderByDescending(x => x.TimeStamp).Take(10).ToList());
+
+
+            return View(database.Bids.OrderByDescending(x => x.TimeStamp).Take(10).ToList());
+
+            //return View();
         }
 
         public ActionResult About()
