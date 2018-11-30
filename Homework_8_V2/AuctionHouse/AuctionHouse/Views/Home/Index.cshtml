@@ -44,7 +44,9 @@
         </th>
 
         <th>
-            @Html.DisplayFor(item => bid.Item.ItemName)
+            @* @Html.DisplayFor(item => bid.Item.ItemName) *@
+
+            @Html.ActionLink(bid.Item.ItemName, "Details", "Items", new { id = bid.ItemID }, null)
         </th>
 
         <th>
