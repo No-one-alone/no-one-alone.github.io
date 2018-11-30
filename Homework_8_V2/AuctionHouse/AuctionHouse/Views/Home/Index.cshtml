@@ -56,7 +56,16 @@
         </th>
 
         <th>
-            @Html.DisplayFor(item => bid.TimeStamp)
+            @* @Html.DisplayFor(item => bid.TimeStamp) *@
+
+            @if (bid.TimeStamp.Date == DateTime.Today)
+            {
+                @(string.Format("{0:T}", bid.TimeStamp))
+            }
+            else
+            {
+                @Html.DisplayFor(item => bid.TimeStamp)
+            }
         </th>
 
     </tr>
