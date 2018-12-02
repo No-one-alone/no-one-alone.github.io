@@ -18,6 +18,7 @@ namespace AuctionHouse.Controllers
     {
         private AuctionHouseContext db = new AuctionHouseContext();
 
+
         // GET: Bids
         public ActionResult Index()
         {
