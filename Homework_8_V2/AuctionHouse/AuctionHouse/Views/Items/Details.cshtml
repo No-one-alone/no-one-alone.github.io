@@ -10,6 +10,23 @@
     <h4>Item</h4>
     <hr />
     <dl class="dl-horizontal">
+        @*ajax*@
+
+        <dt>
+            <input type="hidden" id="listing-id" value="@Model.ID">
+         @*  @Html.DisplayNameFor(model => model.ID): *@
+        </dt>
+
+       
+
+        @*ajax*@
+
+
+
+
+
+
+
         <dt>
             @Html.DisplayNameFor(model => model.Seller.SellerName)
         </dt>
@@ -34,9 +51,100 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
+        @*add this for ajax part*@
+        @*
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd id="itemId" value="model.ID">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        *@
+
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@*added this code for ajax component*@
+
+<div class="row">
+    <div class="col-sm-6">
+        <h4>
+            Bids on Item
+        </h4>
+    </div>
+    <div class="col-sm-6">
+
+    </div>
+</div>
+
+@*bids table*@
+
+<table class="table">
+    <tr>
+        <th>
+            Bidder
+        </th>
+        <th>
+            Bid Amount
+        </th>
+    </tr>
+</table>
+
+@*displays message if no bids on item have been made*@
+
+<h4 id="message" style="text-align:center"></h4>
+
+<br />
+
+@*js script to be executed for showing and updating bids on item*@
+
+@section BidScript
+{
+    <script type="text/javascript" src="~/Scripts/UpdateBids.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+<div id="bids">
+    <div class="row">
+        @*Partial view updated by ajax call in bidUpdate.js
+        <dd>
+
+
+        </dd>
+    </div>
+</div>
+
+*@
+@*
+@section scriptSection{
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/UpdateBids.js"></script>
+}
+    *@

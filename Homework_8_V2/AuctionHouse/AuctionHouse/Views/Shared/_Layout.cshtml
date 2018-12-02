@@ -21,9 +21,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     *@
                     <li>@Html.ActionLink("Items available for Auction", "Index", "Items")</li>
                     <li>@Html.ActionLink("Bid on an Item", "Create", "Bids")</li>
@@ -43,5 +43,9 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @*ajax*@
+    @RenderSection("BidScript", required: false)
+
 </body>
 </html>
