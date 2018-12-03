@@ -2,12 +2,12 @@
 
 /**
  * Makes a request to BidRequest() in BidController */
-function bidRequest() {
+function bidUpdateRequest() {
 
     console.log("test1");
     var input = document.getElementById("listing-id").value; //retrieves listing ID from HTML ID attribute
     var id = parseInt(input); //parses the input as an int
-    var source = "/Items/BidRequest/" + id; //appends it to URI string.
+    var source = "/Items/BidUpdateRequest/" + id; //appends it to URI string.
 
     console.log("test2");
 
@@ -60,11 +60,11 @@ function bidRequest() {
      * The main method that "drives" the script 
      */
     function main() {
-        bidRequest(); //makes initial call to bidRequest() method.
+        bidUpdateRequest(); //makes initial call to bidRequest() method.
 
         var interval = 1000 * 5; //timer interval
 
-        window.setInterval(bidRequest, interval); //refreshes bid list every 5 seconds
+        window.setInterval(bidUpdateRequest, interval); //refreshes bid list every 5 seconds
     }
 
     $(document).ready(main()); //Calls main() when page is loaded

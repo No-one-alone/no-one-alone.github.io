@@ -18,48 +18,23 @@ namespace AuctionHouse.Controllers
         private AuctionHouseContext db = new AuctionHouseContext();
 
 
-
-
-
-
-
         // added this for ajax part
         /// <summary>
-        /// Makes a request to get the list of bids of a listing
+        /// Makes a request of the database to get the list of bids in list form.
         /// </summary>
-        /// <param name="id">ID of a listing</param>
-        /// <returns>List of bids in JSON format</returns>
+        /// <param name="id">Needs ID of a listing</param>
+        /// <returns>returns List of bids in JSON format</returns>
         [HttpGet]
-        public JsonResult BidRequest(int? id)
+        public JsonResult BidUpdateRequest(int? id)
         {
             //Gets all bids associated with the specified item ID
-            var bids = db.Bids.Where(b => b.ItemID == id)
-                              .Select(i => new { Buyer = i.Buyer.BuyerName, Amount = i.Price })
+            var bids = db.Bids.Where(bid => bid.ItemID == id)
+                              .Select(bid => new { Buyer = bid.Buyer.BuyerName, Amount = bid.Price })
                               .OrderByDescending(b => b.Amount)
                               .ToList();
 
             return Json(bids, JsonRequestBehavior.AllowGet); //Returns bid list in JSON format
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         // GET: Items

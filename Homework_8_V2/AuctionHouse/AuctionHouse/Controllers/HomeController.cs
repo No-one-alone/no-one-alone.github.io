@@ -16,26 +16,7 @@ namespace AuctionHouse.Controllers
 
         public ActionResult Index()
         {
-            // return View(database.Bids.OrderByDescending(x => x.TimeStamp).Take(10).ToList());
-
-
-            return View(database.Bids.OrderByDescending(x => x.TimeStamp).Take(10).ToList());
-
-            //return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(database.Bids.OrderByDescending(time => time.TimeStamp).Take(10).ToList()); 
         }
     }
 }
