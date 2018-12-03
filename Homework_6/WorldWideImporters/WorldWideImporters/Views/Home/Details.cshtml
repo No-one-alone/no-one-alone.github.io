@@ -20,253 +20,172 @@
 }
 
 
+<br />
+<br />
+<br />
 
-<h2>Details</h2>
+@*Displays Person information*@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 details-box">
+            <h1>@Html.DisplayFor(model => model.MyPerson.FullName)</h1>
+            <hr style="border-color: black;" />
+            <dl class="dl-horizontal">
+                <dt>Preferred name:</dt>
+                <dd>@Html.DisplayFor(model => model.MyPerson.PreferredName)</dd>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <dl>
+                <dt>Phone:</dt>
+                <dd>@Html.DisplayFor(model => model.MyPerson.PhoneNumber)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.FullName)
-        </dt>
+                <dt>Fax:</dt>
+                <dd>@Html.DisplayFor(model => model.MyPerson.FaxNumber)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.FullName)
-        </dd>
+                <dt>E-mail:</dt>
+                <dd><a href="mailto:@Html.DisplayFor(model => model.MyPerson.EmailAddress)">@Html.DisplayFor(model => model.MyPerson.EmailAddress)</a></dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.PreferredName)
-        </dt>
+                <dt>Member since:</dt>
+                <dd>@Html.DisplayFor(model => model.MyPerson.ValidFrom)</dd>
+            </dl>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.PreferredName)
-        </dd>
+        <a href="https://placeholder.com"><img src="https://via.placeholder.com/250?text=Photo" alt="Profile photo" class="center-block" /></a>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.PhoneNumber)
-        </dt>
+    </div>
+</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.FaxNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.FaxNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.EmailAddress)
-        </dt>
+<br />
 
 
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.EmailAddress)
-        </dd>
+@*This controls whether view needs to show additional details.*@
+@if (ViewBag.IsPrimaryContactPerson)
+{
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.Photo)
-        </dt>
+<table>
+    <div class="row">
+        <div class="col-sm-6 details-box">
+            <h2>Company Profile</h2>
+            <hr style="border-color: black;" />
+            <dl class="dl-horizontal">
+                <dt>Company name:</dt>
+                <dd>@Html.DisplayFor(model => model.MyCustomer.CustomerName)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.Photo)
-        </dd>
+                <dt>Phone:</dt>
+                <dd>@Html.DisplayFor(model => model.MyCustomer.PhoneNumber)</dd>
+
+                <dt>Fax:</dt>
+                <dd>@Html.DisplayFor(model => model.MyCustomer.FaxNumber)</dd>
+
+                <dt>Website:</dt>
+                <dd><a href="@Html.DisplayFor(model => model.MyCustomer.WebsiteURL)">@Html.DisplayFor(model => model.MyCustomer.WebsiteURL)</a></dd>
+
+                <dt>Member since:</dt>
+                <dd>@Html.DisplayFor(model => model.MyCustomer.ValidFrom)</dd>
+            </dl>
+        </div>
 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MyPerson.ValidFrom)
-        </dt>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
 
-        <dd>
-            @Html.DisplayFor(model => model.MyPerson.ValidFrom)
-        </dd>
+        @*Extra company site map*@
+        <div class="column" id="mapentry">
 
 
-    </dl>
 
+            <br />
+            <br />
+
+            <div id="map" style="height: 300px; width: 300px;"></div>
+            <script>
+            var longitude = @Model.MyCustomer.DeliveryLocation.Longitude;
+            var latitude = @Model.MyCustomer.DeliveryLocation.Latitude;
+
+            var map = L.map('map').setView([latitude, longitude ], 9);
+
+             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+
+            L.marker([latitude, longitude]).addTo(map).bindPopup('<b>' + '@Model.MyCustomer.CustomerName' + '</b>' + '<br>' + '@Model.MyCustomer.City.CityName' + ', ' + '@Model.MyCustomer.City.StateProvince.StateProvinceCode').openPopup();
+
+            </script>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
 
 </table>
 
+    <br />
 
 
 
-@*added this code!!!d*@
+   
 
 
+    <div class="row">
+        <div class="col-sm-6 details-box">
+            <h2>Purchase History Summary</h2>
+            <hr style="border-color: black;" />
+            <dl class="dl-horizontal">
+                <dt>Orders:</dt>
+                <dd>@Html.DisplayFor(model => model.MyCustomer.Orders.Count)</dd>
 
+                <dt>Gross sales:</dt>
+                <dd>@String.Format("{0:C}", ViewBag.GrossSales)</dd>
 
-
-
-@*Thiss*@
-@if (ViewBag.IsPrimaryContactPerson)
-{
-    <div>
-        <h4>Customer</h4>
-        <hr />
-        <dl class="dl-horizontal">
-
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MyCustomer.CustomerName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MyCustomer.CustomerName)
-            </dd>
-
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MyCustomer.PhoneNumber)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MyCustomer.PhoneNumber)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MyCustomer.FaxNumber)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MyCustomer.FaxNumber)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MyCustomer.WebsiteURL)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MyCustomer.WebsiteURL)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MyCustomer.ValidFrom)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MyCustomer.ValidFrom)
-            </dd>
-
-
-        </dl>
+                <dt>Gross profit:</dt>
+                <dd>@String.Format("{0:C}", ViewBag.GrossProfit)</dd>
+            </dl>
+        </div>
     </div>
 
-    @*This is t*@
-    <div>
-        <h3>Purchases</h3>
-        <dl>
-            <dt>
-                @Html.Label("order-count", "Orders:")
-            </dt>
+    <br />
 
-            <dd>
-                @Html.DisplayFor(model => model.MyCustomer.Orders.Count)
-            </dd>
-
-            <dt>
-                @Html.Label("gross-sales", "Gross Sales: ")
-            </dt>
-
-            <dd>
-                @string.Format("{0:C}", ViewBag.GrossSales)
-            </dd>
-
-
-            <dt>
-                @Html.Label("gross-profit", "Gross Profit: ")
-            </dt>
-
-            <dd>
-                @string.Format("{0:C}", ViewBag.GrossProfit)
-            </dd>
-
-        </dl>
-
-    </div>
-    @*This i*@
-    <div>
-        <h3>Purchased Items</h3>
-        <table>
-            <thead>
+    <div class="row">
+        <div class="col-sm-6 details-box">
+            <h2>Items Purchased</h2>
+            <hr style="border-color: black;" />
+            <table>
                 <tr>
-                    <th>
-                        @Html.Label("stock-item", "Stock Item")
-                    </th>
-
-                    <th>
-                        @Html.Label("description", "Description")
-                    </th>
-                    <th>
-                        @Html.Label("line-profit", "Profit")
-                    </th>
-                    <th>
-                        @Html.Label("sale-person", "Sales Person")
-                    </th>
+                    <th>Stock item ID</th>
+                    <th>Description</th>
+                    <th>Line profit</th>
+                    <th>Salesperson</th>
                 </tr>
-            </thead>
 
-            @foreach (var product in Model.MyInvoiceLine)
-            {
-                <tbody>
+                @foreach (var item in Model.MyInvoiceLine)
+                {
                     <tr>
-                        <td>
-                            @Html.DisplayFor(item => product.StockItemID)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(item => product.Description)
-                        </td>
-
-                        <td>
-                            @string.Format("{0:C}", product.LineProfit)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(item => product.Invoice.Person4.FullName)
-                        </td>
+                        <td>@Html.DisplayFor(model => item.StockItemID)</td>
+                        <td>@Html.DisplayFor(model => item.Description)</td>
+                        <td>@String.Format("{0:C}", item.LineProfit)</td>
+                        <td>@Html.DisplayFor(model => item.Invoice.Person4.FullName)</td>
                     </tr>
-                </tbody>
-
-
-
-
-            }
-
-
-        </table>
+                }
+            </table>
+        </div>
     </div>
 
 
-
-    <div class="col-md-5">
-        <div id="map" style="height: 180px; width: 200px"></div>
-        <script>
-        var long = @Model.MyCustomer.DeliveryLocation.Longitude;
-        var lat = @Model.MyCustomer.DeliveryLocation.Latitude;
-
-
-
-        var map = L.map('map').setView([lat, long ], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        L.marker([51.5, -0.09]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-            .openPopup();
-        </script>
-    </div>
-    <div class="col-md-3"></div>
-
-    <p>
-
-        @Html.ActionLink("Back to List", "Index")
-    </p>
 
 
 
@@ -274,88 +193,5 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-@*
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Person1.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PreferredName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SearchName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPermittedToLogon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LogonName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsExternalLogonProvider)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HashedPassword)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSystemUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsEmployee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSalesperson)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserPreferences)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FaxNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomFields)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OtherLanguages)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValidFrom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValidTo)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PersonID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.PersonID })
-            </td>
-        </tr>
-    }
-
-*@
 
 

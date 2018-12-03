@@ -1,3 +1,6 @@
+/// <summary>
+/// This the namespace of our data access layer file
+/// </summary>
 namespace WorldWideImporters.Models
 {
     using System;
@@ -5,6 +8,9 @@ namespace WorldWideImporters.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
+    /// <summary>
+    /// This is the class definition of our DAL file.
+    /// </summary>
     public partial class WorldWideImportersContext : DbContext
     {
         public WorldWideImportersContext()
