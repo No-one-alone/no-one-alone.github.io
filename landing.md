@@ -11,7 +11,8 @@ the senior software engineering sequence and is hosted in this repository:
 3. [Homework #3](Homework_3/ConsoleApp1/ConsoleApp1/blog.md) (Learning C# via translating a Java app into C# console app using the Visual Studio IDE)
 4. [Homework #4](Homework_4/blog.md) (Building an ASP.NET MVC 5 web app with no database)
 5. [Homework #5](Homework_5/blog.md) (Building an ASP.NET MVC 5 web app with a simple database)
->Homework #6 coming soon ...
+5. [Homework #6](Homework_6/blog.md) (Building an ASP.NET MVC 5 web app with a preexisting multi-table/relational database)
+>Homeworks #7,8,9 coming soon ...
 
 ### Notes
 >Coming Soon ...
