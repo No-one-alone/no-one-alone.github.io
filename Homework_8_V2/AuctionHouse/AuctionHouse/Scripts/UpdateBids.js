@@ -1,21 +1,21 @@
-﻿// makes a request to bidRequest in BidController
+﻿// development of this code was greatly aided by consultation with Manuel.
 
-/**
- * Makes a request to BidRequest() in BidController */
+// This makes a request to bidUpdateRequest in ItemsController
 function bidUpdateRequest() {
 
     console.log("test1");
-    var input = document.getElementById("listing-id").value; //retrieves listing ID from HTML ID attribute
-    var id = parseInt(input); //parses the input as an int
-    var source = "/Items/BidUpdateRequest/" + id; //appends it to URI string.
+    var inputID = document.getElementById("table-id").value; //this retrieves the listing ID from HTML ID attribute
+    var id = parseInt(inputID); // this parses the input into an int
+    var source = "/Items/BidUpdateRequest/" + id; // this appends it to the required URI string.
 
     console.log("test2");
 
+    // This is the actaul ajax call.
     $.ajax({
         type: "GET",
         dataType: "json",
         url: source,
-        success: showBids,
+        success: BidsDisplay,
         error: ajaxError
     });
 }
@@ -23,25 +23,26 @@ function bidUpdateRequest() {
     // appends the list of bids to view.
     /*@param {any} bidList JSON reponse received from BidRequest in BidController.*/
 
-    function showBids(bidList) {
+    function BidsDisplay(Listing) {
         console.log("test3");
-        // checks whether json response is empty
-        if (bidList.length == 0) // empty response, display message to user.
+        // This checks whether json response is empty
+        if (Listing.length == 0) // If list empty, this displays a message to the user.
         {
             console.log("test4");
-            $("message").empty(); // clears message if already exists.
-            $("message").append("no bids to display. Be the First to bid on this item!"); // appends this message to display to user
+            $("message").empty(); // This clears the message if it already exists.
+            $("message").append("no bids to display. Be the First to bid on this item!"); // appends this message to display to the user
         }
         else // loaded response; display bidding data.
         {
             console.log("test5");
-            $("message").empty(); // clears message if already exists.
-           // $("message").remove(); // clears any old bidding data.
+            $("message").empty(); // This clears message if already exists.
+           // $("message").remove(); // This clears any old bidding data away
             $(".bid-info").remove();
-            //Displays row-by-row bidding data.
-            for (var i = 0; i < bidList.length; i++)
+            //This Displays the bidding data a row at a time.
+            for (var i = 0; i < Listing.length; i++)
             {
-                $(".table").append("<tr class=\"bid-info\"><td>" + bidList[i].Buyer + "</td><td>$" + Number(bidList[i].Amount).toLocaleString('en-US', { minimumFractionDigits: 2 }) + "</td></tr>");
+                // A bit of a complicated string for producing both the content and structure of the entries for the table.
+                $(".table").append("<tr class=\"bid-info\"><td>" + Listing[i].Buyer + "</td><td>$" + Number(Listing[i].Amount).toLocaleString('en-US', { minimumFractionDigits: 2 }) + "</td></tr>");
             }
         }
     }
@@ -62,94 +63,9 @@ function bidUpdateRequest() {
     function main() {
         bidUpdateRequest(); //makes initial call to bidRequest() method.
 
-        var interval = 1000 * 5; //timer interval
+        var interval = 1000 * 5; //timer interval set for 5 second update.
 
         window.setInterval(bidUpdateRequest, interval); //refreshes bid list every 5 seconds
     }
 
     $(document).ready(main()); //Calls main() when page is loaded
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-//var ajax_call = function () {
-$(document).ready(function (){
-    //your jQuery ajax code
-
-    // trouble shooter
-    console.log("script load")
-
-    var getBids = function () {
-
-        var id = parseInt($('#itemId').html().trim());
-
-        // trouble shooter
-        console.log("item id")
-
-        var source = "/Items/"
-        
-         //Construct the AJAX call to retrieve the Bids for the item associated with the id/
-            $.ajax({
-                type: "GET",
-               dataType: "json",
-              //url: "/CONTROLLER/ACTION",
-              url: source,
-              data: { "id": VARIABLE },
-              success: DisplayBids,
-              error: errorAjax
-
-    });
-};
-
-
-function DisplayBids(latestBid) {
-    //add new bids to table
-    if (latestBid.price > latestPrice) {
-        $("#bids").prepend("<tr><td>" + latestBid.buyer + "</td><td>" + latestBid.price + "</td></tr>");
-        latestPrice = latestBid.price;
-    }
-}
-
-
-function errorAjax() {
-    console.log("error in ajax");
-}
-
-// updates bids for display.
-var X = 5; // for five seconds
-
-var interval = 1000 * X; // where X is your timer interval in X seconds
-
-window.setInterval(ajax_call, interval);
-
-*/
