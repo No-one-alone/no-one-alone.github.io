@@ -12,7 +12,9 @@ the senior software engineering sequence and is hosted in this repository:
 4. [Homework #4](Homework_4/blog.md) (Building an ASP.NET MVC 5 web app with no database)
 5. [Homework #5](Homework_5/blog.md) (Building an ASP.NET MVC 5 web app with a simple database)
 5. [Homework #6](Homework_6/Blog.md) (Building an ASP.NET MVC 5 web app with a preexisting multi-table/relational database)
->Homeworks #7,8,9 coming soon ...
+8. [Homework #8](Homework_8_V2/blog.md) (Buidling and ASP.NET MVC 5 web app with a do-it-yourself multi-table/relational database)
+>Homework #7,9 coming soon ...
+
 
 ### Notes
 >Coming Soon ...
