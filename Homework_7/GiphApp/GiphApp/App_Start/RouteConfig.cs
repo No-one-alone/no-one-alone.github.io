@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,12 +14,12 @@ namespace GiphApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
             routes.MapRoute(
-               name: "Giphy",
-               url: "Giphy/Image/{enteredWord}",
-               defaults: new { controller = "Ajax", action = "getGIF", enteredWord = UrlParameter.Optional }
-           );
+                name: "GiphyImages",
+                url: "Giphy/Image/{enteredWord}",
+                defaults: new { Controller = "Ajax", action = "GetGiphyAPIimage", word = UrlParameter.Optional }
+
+                );
 
             routes.MapRoute(
                 name: "Default",

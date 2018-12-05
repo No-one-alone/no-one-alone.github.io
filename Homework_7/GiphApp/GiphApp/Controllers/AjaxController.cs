@@ -1,39 +1,42 @@
-﻿using System;
+﻿//using GiphyApp.DAL;
+//using GiphyApp.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-
-//added this
-using System.Net;
-using System.IO;
 
 namespace GiphApp.Controllers
 {
     public class AjaxController : Controller
     {
-        // GET: Ajax
-        public JsonResult getGIF(string enteredWord)
+        
+
+
+        public JsonResult GetGiphyAPIimage(string enteredWord)
         {
-            
+          
             string url = "https://api.giphy.com/v1/stickers/translate?api_key=" +
-                         System.Web.Configuration.WebConfigurationManager.AppSettings["key that is used."] +
+                         System.Web.Configuration.WebConfigurationManager.AppSettings["SecretGiphyAPIKey"] +
                          "&s=" + enteredWord;
 
-            
+      
             WebRequest webRequest = WebRequest.Create(url);
 
-            
-            Stream data = webRequest.GetResponse().GetResponseStream();
+    
+            Stream dataStream = webRequest.GetResponse().GetResponseStream();
 
-           
-            var parseData = new System.Web.Script.Serialization.JavaScriptSerializer()
-                                  .DeserializeObject(new StreamReader(data)
+          
+            var processedData = new System.Web.Script.Serialization.JavaScriptSerializer()
+                                  .DeserializeObject(new StreamReader(dataStream)
                                   .ReadToEnd());
 
-            
-            return Json(parseData, JsonRequestBehavior.AllowGet);
+          
+
+         
+            return Json(processedData, JsonRequestBehavior.AllowGet);
         }
     }
 }

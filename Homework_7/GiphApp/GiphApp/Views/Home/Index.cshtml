@@ -3,23 +3,29 @@
     ViewBag.Title = "Index";
 }
 
-<h1>Index</h1>
+
+<h1>Internet Language Translator</h1>
+
 
 <form action="/Home/Index" method="get">
     <div class="row">
         <div class="col-sm-20">
-            <input name="text" id="textbox" placeholder="Start typing your message here..." />
+            <input name="input text" id="textbox" placeholder="Start typing your message here..." />
         </div>
     </div>
 </form>
 
+<br />
+<br />
+<br />
+
 <div class="row">
-    <div id="live-display">
-        <!--content will appear here.-->
+    <div id="dynamic-output">
+        <!--Text and GIF stickers will appear as the user types-->
     </div>
 </div>
 
-@section APIScript
+@section GiphyAPIScript
 {
     <script src="~/Scripts/GiphyAPIScript.js" type="text/javascript"></script>
 }
