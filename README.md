@@ -1,4 +1,4 @@
-# CS460_FALL2018
+CS460_FALL2018
 This is a test of branching.
 This is a test of the creation of the new official homework#2 feature branch to ensure the master is advanced past the branching point and made visible.
 Merge of hw2 feature branch was successful!
@@ -9,3 +9,8 @@ advancing master branch
 Advancing master branch before merge of Hw4 feature branches
 Advancing master branch before merge of Hw5 feature branch.
 created separate branch for homework 7 database feature.
+Advancing master branch before creation of HW8 feature branch.
+Advancing master branch before merge of HW8 feature branch.
+Advancing master branch before merge of HW9 feature branch.
+Advancing master branch before merge of hw7 feature branch.
+
