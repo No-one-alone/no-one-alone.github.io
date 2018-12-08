@@ -1,0 +1,43 @@
+﻿@*this is our file for defining the view of the homepage to the user.*@
+
+@{
+    ViewBag.Title = "Translator";
+}
+
+<h1>Internet Language Translator</h1>
+
+@*this is our entry form for the user.*@
+<form action="/Home/Index" method="get">
+    <div class="row">
+        <div class="col-sm-20">
+            <input name="input text" id="textbox" placeholder="Start typing your message here..." />
+        </div>
+    </div>
+
+    @* this creates a button for the user to click to clear the textbox of content.*@
+    <br />
+    <div class="row">
+
+        <div>
+            <input class="btn btn-primary" type="button" id="btnClear" value="Start Over" onClick="window.location.reload()">
+        </div>
+
+    </div>
+</form>
+
+<br />
+<br />
+<br />
+
+@*this is where our output of entered text and translated GIF stickers are displayed.*@
+<div class="row">
+    <div id="dynamic-output">
+        <!--The text and images will appear here as the user types them in.-->
+    </div>
+</div>
+
+@* this our include @section for running our javascript file.*@
+@section GiphyAPIScript
+{
+    <script src="~/Scripts/GiphyAPIScript.js" type="text/javascript"></script>
+}

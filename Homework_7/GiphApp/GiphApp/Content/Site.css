@@ -1,0 +1,31 @@
+﻿/* this styles our only view page.*/
+
+/*this styles the header element*/
+h1 {
+    text-align: center;
+}
+
+/*This sets the dimensions of the textbox*/
+#textbox {
+    margin-top: 30px;
+    padding-left: 15px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+/* this styles the body element*/
+body {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+
+/* this sets the padding to keep from hitting the edges */
+.body-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
