@@ -88,7 +88,7 @@ var excludedWords = [",", ".", "", "/", ";", "a", "an", "the", "i", "me", "we", 
     "wasteful", "watery", "weak", "wealthy", "weary", "well - groomed", "well - made", "well - off", "well - to -do ", "wet", "whimsical", "whispering", "white",
     "whole", "wholesale", "wicked", "wide", "wide - eyed", "wiggly", "wild", "willing", "windy", "wiry", "wise", "wistful", "witty", "woebegone", "womanly",
     "wonderful", "wooden", "woozy", "workable", "worried", "worthless", "wrathful", "wretched", "wrong", "wry", "xenophobic", "yellow", "yielding", "young",
-    "youthful", "yummy", "zany", "zealous", "zesty", "zippy", "zonked", "am", "have","with", "your","off", "what"];
+    "youthful", "yummy", "zany", "zealous", "zesty", "zippy", "zonked", "am", "have","with", "your","off", "what","can"];
 
 
 // This sends the request to GIPHY Site.
