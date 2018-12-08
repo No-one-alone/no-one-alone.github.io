@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+    @*removed unncessary navbar, options, and spans.*@
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -19,7 +19,7 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
-    @*added this*@
+    @*added this to render our javascript.*@
     @RenderSection("GiphyAPIScript", required: false)
 
 </body>

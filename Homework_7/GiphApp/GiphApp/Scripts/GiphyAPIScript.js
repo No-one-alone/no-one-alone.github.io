@@ -1,5 +1,6 @@
-﻿
-// massive list of common verbs and adjectives that are to be excluded from being matched to possible images
+﻿/* This is our javascript file for the AJAX calls to the Giphy API. */
+
+// This is our massive list of common verbs and adjectives that are to be excluded from being matched to possible images.
 var excludedWords = [",", ".", "", "/", ";", "a", "an", "the", "i", "me", "we", "to", "for", "going",
     "of", "to", "you", "be", "is", "he", "she", "them", "this", "other", "not", "in", "toward", "and", "so", "but", "yet",
     "before", "as", "since", "when", "while", "until", "after", "later", "next", "all", "or", "thus", "my", "our", "on",
@@ -90,12 +91,15 @@ var excludedWords = [",", ".", "", "/", ";", "a", "an", "the", "i", "me", "we", 
     "youthful", "yummy", "zany", "zealous", "zesty", "zippy", "zonked", "am", "have","with", "your","off", "what"];
 
 
-
+// This sends the request to GIPHY Site.
+// It takes our word that we may 
+// want a GIF of, if it is "interesting.
 function getGiphyImage(keyWord) {
+
+    // this creates our url.
     var source = "Giphy/Image/" + keyWord;
 
-
-
+    // This is the AJAX call itself.
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -106,38 +110,40 @@ function getGiphyImage(keyWord) {
 }
 
 
-function showImage(imageData) {
-
-    
-    var gifImage = imageData.data.images.fixed_height_small.url; //URI of the .gif to display
-
-    $("#dynamic-output").append("<img src=\"" + gifImage + "\"/>&nbsp;"); //Appends .gif to HTML document
-}
-
-
+// This function gives an error message to the user in the event that the image cannot be loaded.
 function ajaxErrorMessage() {
     alert("Image cannot be loaded!!!");
 }
 
+// This function displays the GIF image to the client.
+function showImage(dataOfImage) {
 
+    // This is the uri of the GIF to be displayed.
+    var gifImage = dataOfImage.data.images.fixed_height_small.url; 
+
+    // This appends the GIF image to the HTML document via jQuery.
+    $("#dynamic-output").append("<img src=\"" + gifImage + "\"/> &nbsp;");
+}
+
+// This is the main function for our javascript i.e. our program entry point.
 function main() {
-    $("#textbox").keypress(function (e) {
-        if (e.keyCode == 32) { 
-            var input = document.getElementById("textbox").value; 
-            input = input.split(" "); 
-            input = input[input.length - 1]; 
-            var word = input.toLowerCase(); 
+    $("#textbox").keypress(function (k) {
+        if (k.keyCode == 32) { // Checks if space has been entered into input textbox.
+            var text = document.getElementById("textbox").value; // this retrieves the text from the input textbox.
+            text = text.split(" "); // This splits the text into an array of words.
+            lastWord = text[text.length - 1]; // this retrieves the last word of the array.
+            var lowerWord = lastWord.toLowerCase(); // this converts the word to all lowercase in order to compare against the words in our above list.
 
-
-         
-            if (excludedWords.includes(word)) { 
-                $("#dynamic-output").append("<label>" + input + "</label>&nbsp;") 
+            // This will check if the word is in our list of excluded words.
+            if (excludedWords.includes(lowerWord)) { 
+                $("#dynamic-output").append("<label>" + lastWord + "</label>&nbsp;") // this will simply display the entered word as output.
             }
             else { 
-                getGiphyImage(input); 
+                getGiphyImage(lastWord); // this will display the GIF image translation for the word if it is not in the above array.
             }
         }
     });
 }
 
+// This accesses the document and triggers the main function to get things started.
 $(document).ready(main); 
