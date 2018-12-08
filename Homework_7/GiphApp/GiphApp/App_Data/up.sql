@@ -8,3 +8,7 @@
 
 	CONSTRAINT [PK_dbo.SearchRequests] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
+
+GO
+
+SELECT * FROM [dbo].[SearchRequests]

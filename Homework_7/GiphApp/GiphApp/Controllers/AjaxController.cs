@@ -1,5 +1,4 @@
-﻿//using GiphyApp.DAL;
-//using GiphyApp.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,13 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
+//added these
+using GiphApp.DAL;
+using GiphApp.Models;
+
+
 namespace GiphApp.Controllers
 {
     public class AjaxController : Controller
     {
-        
 
+        private OurSearchRequestsContext database = new OurSearchRequestsContext();
 
+        [HttpGet]
         public JsonResult GetGiphyAPIimage(string enteredWord)
         {
           
@@ -33,9 +38,34 @@ namespace GiphApp.Controllers
                                   .DeserializeObject(new StreamReader(dataStream)
                                   .ReadToEnd());
 
+
+             
+
+            // this is for logging requests info
+            SearchRequests searchRequestsEntry = new SearchRequests();
+
+            searchRequestsEntry.IPAddressOfRequestor = Request.UserHostAddress; 
+            searchRequestsEntry.RequestWord = enteredWord;
+           // searchRequestsEntry.ClientBrowserAgentType = Request.UserAgent; 
+            searchRequestsEntry.ClientBrowserAgentType = Request.Browser.Type;
+            //saves additions
+            database.Entries.Add(searchRequestsEntry);
+            database.SaveChanges();
           
 
-         
+
+
+
+
+
+
+
+
+
+
+
+
+
             return Json(processedData, JsonRequestBehavior.AllowGet);
         }
     }
